@@ -430,7 +430,7 @@ https://github.com/funnyque
                 }
               }
               _this._setUpStatus({ index: file.index, target: target }, 1);
-              _this._showProgress(file.index, target);
+              // _this._showProgress(file.index, target);
               $.ajax({
                 url: option.url,
                 type: "POST",
@@ -440,6 +440,7 @@ https://github.com/funnyque
                 contentType: false,
                 timeout: option.timeout,
                 success: function (res) {
+                  _this._showProgress(file.index, target);
                   // 标记索引，用于删除操作
 
                   res.easyFileIndex = file.index;
