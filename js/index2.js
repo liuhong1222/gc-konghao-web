@@ -52,12 +52,12 @@ $('#easyContainer').easyUpload({
     if (res.resultCode = '000000') {
 
       // 停顿8秒去调用检测接口
-      var secondTest = 5;  //需要的分钟
-      var timersecondsTest = null;
-      timersecondsTest = setInterval(function () {
-        secondTest--;
-        if (secondTest <= 0) {
-          clearInterval(timersecondsTest);
+      // var secondTest = 5;  //需要的分钟
+      // var timersecondsTest = null;
+      // timersecondsTest = setInterval(function () {
+      //   secondTest--;
+      //   if (secondTest <= 0) {
+      //     clearInterval(timersecondsTest);
           fileUrl = res.resultObj.id;
           // 每个文件的总条数
           fileCounts = res.resultObj.fileRows;
@@ -66,8 +66,8 @@ $('#easyContainer').easyUpload({
           fileCountsArrAll.push(fileCounts)
           setCount();
           runIng(param, uploadUrl, fileCounts);
-        }
-      }, 1000)
+        // }
+      // }, 1000)
     }
   },
   errorFunc: function (res) {
