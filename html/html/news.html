@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提示消息</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/layui.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+<style>
+    body {
+        background-color: #F1F1F1;
+    }
+    .main {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        #checkRulesList {
+        position: absolute;
+        left: 430px;
+        top: 40px;
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="news-wrapper wrapper main">
+        <!-- 头部 -->
+        <!-- <header class="header-wrap">
+            <img id="headLogoImg" src="" alt="">
+        </header> -->
+        <!-- 侧边栏 -->
+        <div id="aside"></div>
+        <!-- 右侧联系我们 -->
+        <div id="online-service"></div>
+        <!-- 内容 -->
+        <div id="main-section" class="section-wrap">
+            <!-- title -->
+            <!-- <section>
+                <div class="title-wrap">
+                    <span>我的消息</span>
+                </div>
+            </section> -->
+            <div class="page-width">
+                <!-- 标题 -->
+                <section>
+                    <div class="page-title">
+                        <h2>我的消息</h2>
+                        <p>MY MESSAGE</p>
+                    </div>
+                </section>
+                <!-- <section> -->
+                <!-- <div class="newsList">
+                    <p>当前位置：<span id="titleName">消息列表</span></p>
+                </div> -->
+                <!-- 新闻消息 -->
+                <div class="new-list clearfix">
+                    <!-- <h3>消息</h3> -->
+                    <div class="select fr">
+                        <span style="
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #373F5D;">选中状态：</span>
+                        <select name="" id="test" style="border-radius: 4px;border: 1px solid #C0C3CC;">
+                            <option value="">全部</option>
+                            <option value="1">已读</option>
+                            <option value="0">未读</option>
+                        </select>
+                        <button id="delSelect">删除选中信息</button>
+                    </div>
+                    <ul class="clearfix">
+                        <div style="margin-bottom:20px">
+                            <input type="checkbox" id="checkAll" class="checkbox" style="display:none">
+                            <label for="checkAll"></label>全选
+                        </div>
+                        <div class="hisRecordList">
+
+                        </div>
+                    </ul>
+
+                    <div id="page" class="fr"></div>
+                </div>
+
+                <!-- 消息详情 -->
+                <div class="newDetails" style="display:none">
+                    <h3><span id="return"> <img src="../images/return.png" alt=""></span> 消息详情</h3>
+                    <div class="details-title">
+                        <p><span>【更新通知】</span> <span class="title"></span></p>
+                    </div>
+                    <div class="newsDatail-list">
+                        <!-- 消息详情 -->
+                    </div>
+                </div>
+                <!-- </section> -->
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div id="footer" style="position: absolute;width: 100%;bottom: 0;"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/news.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/layui.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

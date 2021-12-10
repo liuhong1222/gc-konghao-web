@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ocr</title>
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/layui.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+
+<body>
+    <div class="fourOcrResult wrapper">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <!-- banner -->
+        <div id="web_bg" class="web_bg_proocr"></div>
+        <!-- 基本信息api接口 -->
+        <section>
+            <div class="eleResult-bg">
+                <div class="w1200 eleResult clearfix">
+                    <div class="basic-info fl">
+                        <h6>基本信息</h6>
+                        <div class="basicInfos">
+                            <p>当前余额（条）</p>
+                            <p id="basci-balance">0</p>
+                            <button id="basic-rechargeBtn">充值</button>
+                        </div>
+                    </div>
+                    <div class="api-inter fr">
+                        <h6>API接口</h6>
+                        <div class="apiInfos">
+                            <div>
+                                <span>API账号：</span>
+                                <input type="text" value="" class="apiCount" readonly>
+                            </div>
+                            <div class="apiPass clearfix">
+                                <span class="fl">API密码：</span>
+                                <label class="showPwd fl" data-state="off"></label>
+                                <input type="password" value="" class="fl apipass" readonly>
+                            </div>
+                            <button id="api-duibtn">对接文档</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 检测量-折线图  -->
+        <section>
+            <div class="w1200">
+                <div class="fold-line">
+                    <p style="color:#585f68;" class="title"></p>
+                    <div style="height:100px;margin:0 auto" class="echartsBtn">
+                        <!-- <button id="downExcel"><span>ico</span> 下载报表</button> -->
+                        <button id="currMonth">当 月</button>
+                        <button id="nextMonth" style="display:none">下一个月</button>
+                        <button id="lastMonth">上一个月</button>
+                    </div>
+                    <div style="text-align:center;font-weight:700"><span id="monthShow"></span> 月检测结果展示</div>
+                    <div id="main" style="height:400px; margin:0 auto"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 历史检测 -->
+        <section>
+            <div class="w1200 history-record his-tabs">
+                <ul class="tabs clearfix">
+                    <li class="active"><a href="#tabs1" onclick="return false">检测结果</a></li>
+                    <li><a href="#tabs2" onclick="return false">IP绑定</a></li>
+                    <li class="accRemind"><a href="#tabs3" onclick="return false">余额提醒</a></li>
+                </ul>
+
+                <div id="tabs1" class="hide show clearfix">
+                    <div class="hisRecordTitle">
+                        <dl>
+                            <dt>订单号</dt>
+                            <dt>结果</dt>
+                            <dt>结果状态</dt>
+                            <dt>创建时间</dt>
+                            <dt>结果时间</dt>
+                            <dt>备注</dt>
+                        </dl>
+                    </div>
+                    <!-- 渲染内容 -->
+                    <div class="hisRecordList">
+
+                    </div>
+                    <!-- 分页 -->
+                    <!-- 分页 -->
+                    <div id="page" class="fr"></div>
+                    <!-- 加载动画 -->
+                    <div class="spinner">
+                        <div class="spinner-container container1">
+                            <div class="circle1"></div>
+                            <div class="circle2"></div>
+                            <div class="circle3"></div>
+                            <div class="circle4"></div>
+                        </div>
+                        <div class="spinner-container container2">
+                            <div class="circle1"></div>
+                            <div class="circle2"></div>
+                            <div class="circle3"></div>
+                            <div class="circle4"></div>
+                        </div>
+                        <div class="spinner-container container3">
+                            <div class="circle1"></div>
+                            <div class="circle2"></div>
+                            <div class="circle3"></div>
+                            <div class="circle4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs2" class="hide">
+                    <!-- ip地址 -->
+                    <input type="hidden" name="getid" value="" id="getid">
+                    <div class="ipBind">
+                        <p class="ip">添加服务器IP地址</p>
+                        <textarea name="" cols="150" rows="6" placeholder="填写需报规的IP地址，IP地址之间用半逗号分隔，复制同样也是用半逗号分隔" id="IpValue"></textarea>
+                        <button id="ipSaveBtn" disabled="disabled">保存</button>
+                    </div>
+                </div>
+                <div id="tabs3" class="hide">
+                    <!-- 余额提醒 -->
+                    <div class="remindbalance">
+                        <!-- <p>余额提醒</p> -->
+                        <div class="remind">提醒金额 ： &nbsp; 账户低于 &nbsp;<input type="text" class="remindInp">
+                            &nbsp;条，发送提醒消息</div>
+                        <div class="course">免费短信提醒 ：&nbsp; <input type="text" class="remindInp1">&nbsp;
+                            最多三个号码，多个号码用英文逗号隔开</div>
+                        <button id="balSaveBtn">保存</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/echarts.common.min.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/proOcrResult.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/layui.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

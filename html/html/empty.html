@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>空号检测（批量上传）</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta meta http-equiv="X-UA-Compatible" content="IE=8" meta http-equiv="X-UA-Compatible" content="IE=7">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/easy-upload.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/index2.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5c82b93d14cd5408841b0f21c7752204";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script language="javascript">
+        function RunOnBeforeUnload() {
+            window.onbeforeunload = function () {
+                return "";
+            }
+        }
+    </script>
+</head>
+<style>
+        #checkRulesList {
+            position: absolute;
+            left: 430px;
+            top: 40px;
+            display: none;
+        }
+        </style>
+
+<body onload="RunOnBeforeUnload()">
+
+    <body>
+        <div class="wrapper online-test">
+            <!-- 头部 -->
+            <!-- <header class="header-wrap">
+                <img id="headLogoImg" src="" alt="">
+            </header> -->
+            <!-- 侧边栏 -->
+            <div id="aside"></div>
+            <!-- 右侧联系我们 -->
+            <div id="online-service"></div>
+            <!-- 内容 -->
+            <div class="empty-section">
+                <!-- title -->
+                <!-- <section>
+                    <div class="title-wrap">
+                        <span>在线检测</span>
+                    </div>
+                </section> -->
+                <content>
+                    
+                    <!-- 图标 -->
+                    <div class="title"></div>
+
+                    <!-- 批量上传开始 -->
+                    <div id="easyContainer">
+
+                    </div>
+                    <!-- 批量上传结束 -->
+
+
+                    <!-- 警告弹出层开始 -->
+                    <div>
+                        <div class="notice-pop-up" style="display: none">
+                            <p>文档上传后会自动进行检测,</p>
+                            <p>该过程无法暂停或取消，是否立即上传</p>
+                            <button id="notice-pop-upBtnTrue">是</button>
+                            <button id="notice-pop-upBtnClear">否</button>
+                        </div>
+                    </div>
+                    <!-- 警告弹出层结束 -->
+                    <!-- 提示超出文件格式 -->
+                    <div class="beyond-file-format-tip">
+                        <p>您的文件数量超出限制，最多可上传30个文件，系统已自动选择前30个文件，如需检测其他文件，请删除列表中的文件后再添加。</p>
+                    </div>
+                    <!-- <footer>
+                        <div style="height:30px;">
+                            <span class="msj-companyName"></span> &nbsp;&nbsp;<span>版权所有Copyright</span><span class="msj-copyright"></span>
+                        </div>
+                        <div style="height:30px;">
+                            <span>公司地址：</span><span class="msj-adress"></span><span style="margin-left: 16px;" class="contactInfoName">联系方式：</span><span class="contactInfo"></span>
+                        </div>
+                        <div style="height:30px;">
+                            <span>增值电信业务经营许可证：</span><span class="msj-licence"></span> &nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn"
+                                target="_blank"><span class="msj-icpRecord"></span></a>&nbsp;&nbsp;<span class="msj-policeRecord"></span>
+                        </div>
+                    </footer> -->
+                </content>
+            </div>
+        </div>
+        <script>
+            document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+            document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+            document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+                document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+                document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+            // 批量js
+            document.write("<script type='text/javascript' src='../lib/jquery.cookie-1.4.1.min.js?st=" + currTime + "'><\/script>");
+            document.write("<script type='text/javascript' src='../js/easyUpload.js?st=" + currTime + "'><\/script>");
+            document.write("<script type='text/javascript' src='../js/index2.js?st=" + currTime + "'><\/script>");
+        </script>
+        <!-- <center>
+            <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+            <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+        </center> -->
+    </body>
+
+</html>

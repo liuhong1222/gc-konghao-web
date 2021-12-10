@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品大全</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-1.11.1.0.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+
+</head>
+<style>
+    .main {
+            display: -webkit-flex;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        /* #MEIQIA-BTN-HOLDER {
+            display: none !important;
+        } */
+        #checkRulesList {
+        position: absolute;
+        left: 430px;
+        top: 40px;
+        display: none;
+    }
+</style>
+
+<body>
+    <!--  -->
+    <div class="wrapper proAll-wrapper main">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <!-- 产品分类 -->
+        <!-- <section> -->
+        <div class="w1200 proAlls clearfix">
+            <div class="proTabs clearfix">
+                <span class="active">全部产品</span>
+                <span>空号检测类</span>
+                <span class="faceBtn proTabs-face">人脸识别类</span>
+                <span class="proTabs-OCR">OCR</span>
+                <div class="line"></div>
+            </div>
+            <!-- 全部 -->
+            <ul class="clearfix hide show allProducts">
+                <li data-href="nullCodeTest.html" class="emptyTest">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/nullcode_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>空号检测</p>
+                        <span>根据客户提供的手机号，分类筛选出其中的空号、实号、风险号和沉默号。</span>
+                    </div>
+                </li>
+                <li data-href="emptyAPI.html" class="emptyTestApi">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/api_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>空号检测API</p>
+                        <span>更详细的空号检测。</span>
+                    </div>
+                </li>
+                <li data-href="accTwoClean.html" class="accTwoClear">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/erci_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>账号二次清洗</p>
+                        <span>清洗被空号占用导致新用户无法注册的账号。</span>
+                    </div>
+                </li>
+                <li data-href="realOnQuery.html" class="codeRealquery">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/ss_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>号码实时在线查询API</p>
+                        <span>运营商CRM检测号码，准确率高达100％。</span>
+                    </div>
+                </li>
+                <li data-href="faceLive.html?tag=face" class="faceContrast">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/rlsb1.png" alt="">
+                    </a>
+                    <div>
+                        <p>人脸比对</p>
+                        <span>返回了这两个人脸比对的置信度，不同误识率的置信度阈值。</span>
+                    </div>
+                </li>
+                <li data-href="faceLive.html?tag=live" class="liveContrast">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/htdb1.png" alt="">
+                    </a>
+                    <div>
+                        <p>活体检测</p>
+                        <span>制定的动作分析，检测是否为真人操作。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=mas" class="identOcrResults">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/masocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>身份证OCR</p>
+                        <span>对二代居民身份证正反面的关键字段识别。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=busin" class="businOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/yyzocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>营业执照OCR</p>
+                        <span>快速识别营业执照信息，毫秒级响应速度。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=driver" class="driverOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/jszocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>驾驶证OCR</p>
+                        <span>对机动车驾驶证正页的关键字段识别。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=bank" class="bankOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/bankocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>银行卡OCR</p>
+                        <span>识别图片中的银行卡号、银行卡类型、银行名称。</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- 空号检测类 -->
+            <ul class="clearfix hide nullcodeProducts">
+                <li data-href="nullCodeTest.html" class="emptyTest">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/nullcode_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>空号检测</p>
+                        <span>根据客户提供的手机号，分类筛选出其中的空号、实号、风险号和沉默号。</span>
+                    </div>
+                </li>
+                <li data-href="emptyAPI.html" class="emptyTestApi">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/api_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>空号检测API</p>
+                        <span>更详细的空号检测。</span>
+                    </div>
+                </li>
+                <li data-href="accTwoClean.html" class="accTwoClear">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/erci_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>账号二次清洗</p>
+                        <span>清洗被空号占用导致新用户无法注册的账号。</span>
+                    </div>
+                </li>
+                <li data-href="realOnQuery.html" class="codeRealquery">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/ss_icon.png" alt="">
+                    </a>
+                    <div>
+                        <p>号码实时在线查询API</p>
+                        <span>运营商CRM检测号码，准确率高达100％。</span>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 人脸类 -->
+            <ul class="clearfix hide identityPros">
+                <li data-href="faceLive.html?tag=face" class="faceContrast">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/rlsb1.png" alt="">
+                    </a>
+                    <div>
+                        <p>人脸比对</p>
+                        <span>返回了这两个人脸比对的置信度，不同误识率的置信度阈值。</span>
+                    </div>
+                </li>
+                <li data-href="faceLive.html?tag=live" class="liveContrast">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/htdb1.png" alt="">
+                    </a>
+                    <div>
+                        <p>活体检测</p>
+                        <span>制定的动作分析，检测是否为真人操作。</span>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- ocr -->
+            <ul class="clearfix hide ocrPros">
+                <li data-href="proOCR.html?ocr=mas" class="identOcrResults">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/masocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>身份证OCR</p>
+                        <span>对二代居民身份证正反面的关键字段识别 。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=busin" class="businOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/yyzocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>营业执照OCR</p>
+                        <span>快速识别营业执照信息，毫秒级响应速度。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=driver" class="driverOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/jszocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>驾驶证OCR</p>
+                        <span>对机动车驾驶证正页的关键字段识别。</span>
+                    </div>
+                </li>
+                <li data-href="proOCR.html?ocr=bank" class="bankOcrResult">
+                    <a href="javascript:;" class="fl">
+                        <img src="../images/bankocr1.png" alt="">
+                    </a>
+                    <div>
+                        <p>银行卡OCR</p>
+                        <span>识别图片中的银行卡号、银行卡类型、银行名称。</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- </section> -->
+        <!-- 底部 -->
+        <div id="footer" class="footerAll"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/flowup.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/proAll.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

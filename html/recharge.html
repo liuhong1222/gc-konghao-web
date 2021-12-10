@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>充值套餐</title>
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+        document.write("<script type='text/javascript' src='../js/qrcode.min.js?st=" + currTime + "'><\/script>");
+    </script>
+</head>
+
+<body>
+    <div class="accInfo-wrapper wrapper">
+        <!-- 头部 -->
+        <!-- <header class="header-wrap">
+            <img id="headLogoImg" src="" alt="">
+        </header> -->
+        <!-- 侧边栏 -->
+        <div id="aside"></div>
+        <!-- 右侧联系我们 -->
+        <div id="online-service"></div>
+        <!-- 内容 -->
+        <div id="main-section" class="section-wrap">
+            <!-- title -->
+            <!-- <section>
+                <div class="title-wrap">
+                    <span>在线充值</span>
+                </div>
+            </section> -->
+            <!-- 标题 -->
+            <div class="page-width">
+                <section>
+                    <div class="page-title">
+                        <h2>在线充值</h2>
+                        <p>ONLINE RECHARGE</p>
+                    </div>
+                </section>
+                <section class="recharge-content">
+                    <!-- 产品套餐盒子 -->
+                    <div class="pro-box">
+                        <!-- <p>充值套餐</p> -->
+                        <!-- 导航栏切换 -->
+                        <!-- <ul class="clearfix tabs">
+                            <li data-flag="nullcode" data-productId="1" class="tab active konghao"><a href="#tab1">空号检测</a></li>
+                            <li data-flag="erci" data-productId="2" class="tab erci"><a href="#tab2">账号二次清洗</a></li>
+                            <li data-flag="emptyApi" data-productId="3" class="tab emptyApi"><a href="#tab3">空号检测API</a></li>
+                            <li data-flag="codeapi" data-productId="6" class="tab codeapi"><a href="#tab6">号码实时在线查询API</a></li>
+                            <li data-flag="faceapi" data-productId="9" class="tab faceapi"><a href="#tab8">人脸比对</a></li>
+                            <li data-flag="liveapi" data-productId="10" class="tab liveapi"><a href="#tab8">活体检测</a></li>
+                            <li data-flag="bankocrapi" data-productId="13" class="tab bankocrapi"><a href="#tab9">银行卡OCR</a>
+                            </li>
+                            <li data-flag="driverocrapi" data-productId="14" class="tab driverocrapi"><a href="#tab9">驾驶证OCR</a>
+                            </li>
+                            <li data-flag="identocrapi" data-productId="11" class="tab identocrapi"><a href="#tab9">身份证OCR</a>
+                            </li>
+                            <li data-flag="bussicocrapi" data-productId="12" class="tab bussicocrapi"><a
+                                    href="#tab9">营业执照OCR</a></li>
+                        </ul> -->
+                        <!-- tab对应的内容 -->
+                        <div class="tab_container">
+                            <!-- 空号检测 -->
+                            <div id="tab1" class="clearfix tab_content df">
+                                <ul id="nullcodePackage">
+
+                                </ul>
+                            </div>
+                            <!-- 账号二次清洗 -->
+                            <div id="tab2" class="clearfix tab_content">
+                                <ul id="erciPackage">
+
+                                </ul>
+                            </div>
+                            <!-- 空号检测API -->
+                            <div id="tab3" class="clearfix tab_content">
+                                <ul id="emptyApiPackage">
+
+                                </ul>
+                            </div>
+
+                            <!-- 号码实时在线查询API -->
+                            <div id="tab6" class="clearfix tab_content">
+                                <ul id="codeRealPackage">
+
+                                </ul>
+                            </div>
+
+                            <!-- 人脸比对 和活体检测-->
+                            <div id="tab8" class="clearfix tab_content">
+                                <ul class="cf faceContrast liveTestCon cf_ul" id="faceLiveContrast">
+
+                                </ul>
+                            </div>
+                            <!-- 四个ocr -->
+                            <div id="tab9" class="clearfix tab_content">
+                                <ul class="cf moreOcr cf_ul" id="moreOcrPackage">
+
+                                </ul>
+                            </div>
+                            <!-- 自定义充值 -->
+                            <div class="apiCon">
+                                <h3>自定义充值</h3>
+                                <div class="custom ">
+                                    <input class="fl" type="text" placeholder="输入金额（元）" id="confirmInput">
+                                    <button id="confirmCount">确认</button>
+                                    <p class="tips"></p>
+                                </div>
+                                <div style="margin-left:27px;margin-top: 10px;display:none" class="customegive">
+                                    活动提示：自定义充值成功后，系统将自动给您<span style="color:red;font-weight: 700;">赠送</span><span
+                                        style="color:red;font-weight: 700;" id="giveNumberCustom">20%</span>条（活动截止时间：2018-10-22
+                                    23:59:59）</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-box clearfix" id="pay-box-id">
+                        <p>支付方式</p>
+                        <div class="paymoney">
+                            应付金额：<span id="money"> 950 </span>元
+                        </div>
+                        <div class="ways clearfix">
+                            <div class="alipay pay " style="margin-left:160px;">
+                                <div id="qrcode"></div>
+                                <div id="aliPay">支付宝支付</div>
+                            </div>
+                        </div>
+
+                        <div class="tip">
+                            注：如需其他充值方式，或充值过程中遇到任何问题，请与<a id="kf" href="javascript:;" style="color:#477FFF;">客服人员</a>联系
+                        </div>
+                    </div>
+                    <div class="pay-box clearfix" id="noRecharge" style="display:none">
+                        <p>支付方式</p>
+                        <div class="paymoney" style="font-size: 14px;font-weight: 700;">
+                            暂不支持支付宝支付，给您带来不便敬请谅解!
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 用户不能充值的时候站位 -->
+                <section class="recharge-content-filler" style="height:600px; text-align: center; display: none;">
+                    <p style="padding-top: 300px;">您的账户不支持在线充值</p>
+                </section>
+                <div id="maskReg"></div>
+                <!-- 加载动画 -->
+                <div class="spinner">
+                    <div class="spinner-container container1">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container2">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                    <div class="spinner-container container3">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                        <div class="circle4"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 合同  -->
+            <!-- <section>
+                <a href="javascript:;" class="big-link" data-reveal-id="myModal">点击协议</a>
+            
+                <div class="reveal-modal empty-contrast" id="myModal">
+                    pppppp
+                </div>
+            </section> -->
+        </div>
+
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/jquery.reveal.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/recharge.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img
+                    alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/19311708.asp"
+                    style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

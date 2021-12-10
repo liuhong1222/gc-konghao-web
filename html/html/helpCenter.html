@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+
+        document.write("<script type='text/javascript' src='../lib/jquery-1.11.1.0.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+<style>
+    #checkRulesList {
+    position: absolute;
+    left: 430px;
+    top: 40px;
+    display: none;
+}
+</style>
+
+<body>
+    <div class="wrapper helpCenter-wrapper">
+        <!-- 头部 -->
+        <!-- <header class="header-wrap">
+            <img id="headLogoImg" src="" alt="">
+        </header> -->
+        <!-- 常见问题 -->
+
+        <!-- 侧边栏 -->
+        <div id="aside"></div>
+        <!-- 右侧联系我们 -->
+        <div id="online-service"></div>
+        <!-- 内容 -->
+        <div id="main-section" class="section-wrap">
+            <!-- title -->
+            <!-- <section>
+                <div class="title-wrap">
+                    <span>常见问题</span>
+                </div>
+            </section> -->
+            <div class="page-width">
+                <!-- 标题 -->
+                <section>
+                    <div class="page-title">
+                        <h2>常见问题</h2>
+                        <p>COMMON PROBLEM</p>
+                    </div>
+                </section>
+                <section>
+                    <!-- <div id="server-banner">
+                        <p>我们随时为您服务</p>
+                        <div id="search_box">
+                            <div class="clearfix">
+                                <input class="fl textbox" id="searchstr" type="text" size="10" name="searchstr" placeholder="请输入搜索关键词" />
+                                <button class="fl" id="search_btn">搜索</button>
+                            </div>
+                            <p>热门关键词：空号检测的原理，各个包的具体含义</p>
+                        </div>
+                    </div> -->
+                    <div class="conTabsIinfo clearfix">
+                        <!-- 切换 -->
+                        <!-- <div class="tabsLeft fl">
+                            <h3>常见产品问题</h3>
+                            <span class="active khTab" data-href="#tab1">空号检测</span>
+                            <span class="khapiTab" data-href="#tab2">空号检测API</span>
+                            <span class="twoTab" data-href="#tab3">账号二次清洗</span>
+                            <span class="realCodeTab" data-href="#tab4">号码实时在线查询API</span>
+                        </div> -->
+                        <div class=" conRight" id="conRight">
+                            <div class="questions konghao quesHide quesShow" id="tab1" data-ids="1">
+                                <!-- <h2>空号检测</h2> -->
+                                <!-- <span class="searchLine"></span> -->
+                                <ul>
+                                    <!--                             <li> -->
+                                    <!--                                 <h3>你们空号检测是怎么计费的？</h3> -->
+                                    <!--                                 <p>空号检测目前的价格是0.002元/条（即20元／万），满1000元可打95折，满10000是打9折，满20000可打8折；</p> -->
+                                    <!--                             </li> -->
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3 style="margin-top: 10px;">空号检测上传的文件是什么样的？</h3>
+                                        <p>TXT格式，每行一个手机号码，不能有符号、空格；3001-150万的号码，最大支持20M的文件。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们现在能测出什么结果出来？</h3>
+                                        <p>我们检测完成后会将检测结果自动分为实号包、空号包、沉默包和风险包供您下载</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li class="packp">
+                                        <h3>你们各个包的具体含义</h3>
+                                        <p>实号包含义：实号包即为活跃号码包（命中准确率100% 误差率：5%）出现误差原因：可能意外停机</p>
+                                        <P>沉默包：沉默包即为超过六个月未激活过的空号和近三个月平均流量低于30M的用户（可理解为不活跃号码包），因为运营商的空号保存期为六个月，超过六个月的空号可能随时投入市场变成实号，且近三个月平均流量低于30M的用户也有可能随时停机，为确保数据的准确性，独立分包。（此包含无准确率可对比，但不建议高价值的推广宣传，可以捡漏）</P>
+                                        <p>空号：近一个月内出现过的空号和停机号（命中准确率100%
+                                            误差率：5%）出现误差的原因，可能停机的手机号恢复使用，我们每一条数据都通过运营商系统查询，但为了降低成本，营销层面的数据系统查询保留一个月</p>
+                                        <p>风险包：长时间关机或未开通语音服务以及易投诉的用户</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的准确率是多少，造成失败的原因是什么？</h3>
+                                        <p>我们是运营商的接口直接查询，理论上来讲我们的准确率是能做到100%，但是由于运营商给出查询的价格是相当贵的，单条的价格将近0.5元/条，所以在我们的数据库里面有一个月的留存数据用来查询，因为时效性的问题，可能会出现有10%的误判，但您检测的手机号码，每个号码我们都有过查询。查出来的空号就在近一个月内出现过空号，查询过的停机就是在停一个月内有过停机。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们空号检测的原理是怎么样的，速度大概是多少？</h3>
+                                        <p>我们是运用运营商的接口进行查询，速度是8毫秒/条，预计10万条在3分钟左右。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的误差大吗？</h3>
+                                        <p>误差这个肯定有的。网络超时、运营商串码、手机号码受保护或者被运营商列入黑名单、虚拟卡、羊毛党这样都是不可控的。但整体来讲，我们应该不会出现5%以上的误差。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们如何保证数据的正确率？</h3>
+                                        <p>我们严格遵守每条数据都会通过运营商数据接口查询，但由于运营商接口成本过高，我们系统有一个月数据库存，保证您所筛选的号码在一个月内都有真实的运营商状态返回，比如出现在空号包里面的数据，就一定在一个月内有出现过停机或空号的状态；是实号的话，就一定在一个月内是有余额和有流量使用超过30M；如果是沉默号，就一定在一个月查到状态是销号或平均流量低于30M。但由于有一个月库存数据，部分数据会停机复机，或实号意外欠费停机，包括运营商接口返回串包，所以会有一定的误差。我们经过了过亿的数据内测和客户反馈，误差一般在3%-5%内。</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="questions nullCodeApi quesHide" id="tab2" data-ids="2">
+                                <h2>空号检测API</h2>
+                                <span class="searchLine"></span>
+                                <ul>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>空号检测API反馈速度和并发量是多少？</h3>
+                                        <p>通过API接口检测的系统反馈速度一般不超过500毫秒（ms），超时反馈的当次检测不收取费用。检测系统可实现200个接口同时调用的需求。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>空号检测API的结果是？</h3>
+                                        <p>API检测反馈结果分为实号、沉默号、空号、库无、停机、风险号并显示手机号所属地区及运营商。</p>
+                                    </li>
+
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>库无是什么意思？</h3>
+                                        <p>库无是指利用API接口检测中，系统无法在数据库中查询到该号码，如手机号检测反馈状态为库无，不收取检测费用。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>空号检测和API有什么区别？</h3>
+                                        <p>空号检测只检测手机号码的状态，以文档的方式线下检测，最低检测3000条，API是调用我们的接口，这个接口可以集成到自己的项目中使用，可以单条检测也可以批量检测，使用api，可以检测到空号，停机，以及卡的类型和区域。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>空号检测API的价格是？</h3>
+                                        <p>单价是0.005元/条，最低充值1.9万元/400万条（95折），4.5万元/1000万条（9折），8万元/2000万条（8折）。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>为什么空号检测API价格是0.005元（5厘）一条？</h3>
+                                        <p>因为目前空号检测API提供的是单条提交占用非常大的服务器资源，目前我们使用的方式是一个API独立建一台服务器，在这个价格上面增加了一些服务器费用。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>每天API调用次数有限制吗？</h3>
+                                        <p>没有。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="questions twoCleanCon quesHide" id="tab3" data-ids="3">
+                                <h2>账号二次清洗</h2>
+                                <span class="searchLine"></span>
+                                <ul>
+                                    <li>
+                                        <h3>账号二次清洗主要适用于哪些场景和不适用于哪些场景？</h3>
+                                        <p>账号二次清洗主要适用于那些高用户平台用于账号清洗功能的开发：比如新注册用户因为号码被老用户占用而无法注册等，由于账号二次清洗无法识别手机号码的所属人，切勿用于作为防羊毛党来识别也无法用来作为互金行业的金融风控。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的账号二次清洗是如何收费？</h3>
+                                        <p>目前账号清洗业务目前收费标准为0.02元一条，最低2000元充值起。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的API接口提供哪些返回状态？</h3>
+                                        <p>API接口会返回订单号，手机状态（1､实号 0､空号 null、超时） 手机地区（上海） 手机卡类型（中国移动 GSM）计费状态：（1､计费 0､不计费）
+                                            提交时间（即通过API提交的时间）
+                                            状态返回时间（即最后一次查询运营询状态时间）。
+                                        </p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的接口准确嘛？</h3>
+                                        <p>我们保证每条手机号码都是通过运营商接口返回，状态100%精准。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们怎么保证数据的真实性？</h3>
+                                        <p>我们的数据保证每一条准查询相对运营商数据，保证数据查询的结果100%准确。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>你们的数据处理逻辑是怎样的？</h3>
+                                        <p>我们系统库存一个月运营商数据记录，客户提交手机号码后，先对比库存数据
+                                            ，如果有库存数据，实时返回结果，如果没有，即实时查询运营商数据，1秒钟内如果记录未收到，系统自动补充一条短信查询，如果在10秒内未收到结果，则返回null。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="questions realCodeQuery quesHide " id="tab4" data-ids="4">
+                                <h2>号码实时在线</h2>
+                                <span class="searchLine"></span>
+                                <ul>
+                                    <li>
+                                        <h3>预销号的含义是？</h3>
+                                        <p>即将变成空号的号码，只是资料还没清空。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>在网但不可用的含义是？</h3>
+                                        <p>在网但不可用是指这个手机号码没有开通语音功能。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>未启用的含义是？</h3>
+                                        <p>就是一个新号。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>为什么会出现无法查询？</h3>
+                                        <p>可能这个号码在运营商那边是个靓号，不给查询。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>异常的含义是？</h3>
+                                        <p>异常是指这个手机号码的状态在运营商那边的状态就为异常所以返回的结果值为异常。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>可以批量检测吗？</h3>
+                                        <p>目前只支持单条检测，返回时间在5s内，一般在1s左右。号码实时在线查询因直接调用的运营商的接口，所以目前支持的并发在50-150。</p>
+                                    </li>
+                                    <span class="searchLine"></span>
+                                    <li>
+                                        <h3>检测一个号码是停机的，但是返回结果是正常的？</h3>
+                                        <p>移动是要每个省的数据一层一层往上报 ，如果在当天停机，可能还真检测不出来。但您这个确实是移动返回的正常结果。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div id="footer" style="height:75px"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/helpCenter.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/search.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

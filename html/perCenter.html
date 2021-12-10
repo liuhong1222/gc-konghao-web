@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-1.11.1.0.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/layui.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/swiper-3.4.2.min.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+    <style>
+        .perCenter-wrapper .basic-dataCenter .testbtn{border-right: none}
+    .perCenter-wrapper .basic-dataCenter .recharge-showhide{display:none}
+    #checkRulesList,#gs,.contractPwd,#gsTwo,.pldContrastPwdWarn,.pldPwdWarn {
+	display: none;
+    }
+  
+           
+    </style>
+</head>
+
+<body style="background-color: #f5f6fa;">
+    <div class="wrapper perCenter-wrapper">
+        <!-- 头部 -->
+        <!-- <header class="header-wrap">
+            <img id="headLogoImg" src="" alt="">
+        </header> -->
+        <!-- 轮播图 -->
+        <!-- <section>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pic1">
+                        <a href="javascript:;"></a>
+                        <div class="w980">
+                            <div id="immed-known1" class="immed-tests empty-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic2">
+                        <a href="javacript:;"></a>
+                        <div class="w980">
+                            <div id="immed-known2" class="immed-tests face-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic3">
+                        <a href="javascript:;"></a>
+                        <div class="w980">
+                            <div id="immed-known3" class="immed-known opera-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic4">
+                        <a href="javascript:;"></a>
+                        <div class="w980">
+                            <div id="immed-known4" class="immed-known accTwo-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section> -->
+        <!-- 侧边栏 -->
+        <div id="aside"></div>
+        <!-- 右侧联系我们 -->
+        <div id="online-service"></div>
+        <!-- 内容 -->
+        <div id="main-section" class="section-wrap">
+            <!-- title -->
+            <!-- <section>
+                <div class="title-wrap">
+                    <span>个人账户</span>
+                </div>
+            </section> -->
+            <section>
+                <div class="textRecord-bg">
+                    <img src="../images/history_bg.png" alt="" style="width: 100%;">
+                    <div class="textRecord-bg-text">
+                        <h2>数据真实有效</h2>
+                        <p>承载大量高效的检测数据，一键下载每月报表</p>
+                        <button>
+                            <a href="../html/empty.html">立即检测</a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div class="page-width">
+                <!-- 标题 -->
+                <section>
+                    <div class="page-title">
+                        <h2>个人账户</h2>
+                        <p>PERSONAL ACCOUNT</p>
+                    </div>
+                </section>
+                <!-- 基本信息 -->
+                <section>
+                    <div class="basic-dataCenter">
+                        
+                        <ul class="clearfix">
+                            <li>
+                                <div class="title">
+                                    <p>账号信息</p>
+                                </div>
+                                <div class="data-info">
+                                    <p><img src="../images/iconfont/phone.svg" alt=""><span id="phone"></span><span class="fr editBtn editIphone">修改</span></p>
+                                    <p style="margin-top: 25px;"><img src="../images/iconfont/message.svg" alt=""><span id="userEmail">邮箱为空</span><span class="fr editBtn editEmail">修改</span></p>
+                                    <!-- <div style="margin-top: 15px;margin-bottom:15px"><img src="../images/mima.png" alt=""><input
+                                            type="password" value="" id="resultPwd" readonly><span class="fr editPassWord">修改</span></div> -->
+                                    <div class='pass-wrap'><img src="../images/iconfont/password.svg" alt=""><input style="width: 200px;" type="password" id="phoneAccOpera" 
+                                            readonly><span class="fr editloginPwd"></span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <p>账户余额(条)</p>
+                                </div>
+                                <div class="data-info ">
+                                    <div class="recharge-wrap">
+                                        <div class="acc-balance">
+                                            <p id="accNumber" class="info"></p>
+                                            <p id="moneyAccs" class="info"></p>
+                                        </div>
+                                        <div class="recharge-showhide">
+                                            <div class="recharge">
+                                                <button id="rechargeBtn">充值</button>
+                                                <p>满一千9.5折优惠</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <p>数据中心</p>
+                                </div>
+                                <div class="data-info testbtn">
+                                    <button class="test">检测记录</button>
+                                </div>
+                            </li>
+                            <!-- <li class="recharge-showhide">
+                                <div class="recharge">
+                                    <button id="rechargeBtn">充值</button>
+                                    <p>满一千9.5折优惠</p>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </section>
+                <!--订单记录-->
+                <section>
+                    <div class="clearfix history-record">
+                        <p>订单记录</p>
+                        <!-- <div class="clearfix">
+                            <button class="fr" style="width: 60px;height: 30px; background-color:#4985fc ; color: #fff;font-size: 12px;" id="exportHisRecord" >导出</button>
+                        </div> -->
+                        <div class="hisRecordTitle">
+                            <dl>
+                                <dt>订单编号</dt>
+                                <dt>订单金额</dt>
+                                <dt>条数</dt>
+                                <dt>订单类型</dt>
+                                <dt>状态</dt>
+                                <dt>充值日期</dt>
+                                <dt>支付方式</dt>
+                                <!-- <dt>合同编号</dt> -->
+                            </dl>
+                        </div>
+                        <!-- 渲染内容 -->
+                        <div class="hisRecordList">
+
+                        </div>
+                        <!-- 分页 -->
+                        <!-- 分页 -->
+                        <div id="page" class="fr"></div>
+                    </div>
+                </section>
+                <!-- 重新绑定手机号，绑定新邮箱 -->
+                <section>
+                    <div class="reveal-modal-bg"></div>
+
+                    <!-- 为账号绑定手机号 -->
+                    <div class="basicSet accBindMobile" style="display:none">
+                        <span class="basicSetClose">
+                            <img src="../images/close_black.png" alt="">
+                        </span>
+                        <h2>绑定手机号</h2>
+                        <form action="">
+                            <input type="text" placeholder="请输入你要绑定的手机号！" class="bindMobile">
+                            <p class="bindMobileWarn">绑定的手机号不能为空！</p>
+                            <p class="bindMobileWarns">手机格式不正确！</p>
+                            <input type="text" placeholder="请输入手机验证码" class="fl mobileCode">
+                            <p style="top:203px" class="mobileCodeWarn">手机验证码不能为空！</p>
+                            <div class="fr accBindMobileCode">
+                                <input type="text" value="获取验证码" id="getMoblieCode" readonly>
+                                <input type="text" value="60S" class="getMoblieCodeTime" readonly>
+                            </div>
+                            <input type="button" value="确定" id="accBindMobileBtn">
+                            <div style="text-align: left;color: #333;margin-top: 10px">
+                                <span>绑定手机号成功后，您可使用手机号＋验证码登录。</span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- 手机 -->
+                    <div class="reBindPhone" id="reBindPhone-mask">
+                        <h3>重新绑定手机号</h3>
+                        <form action="#">
+                            <ul>
+                                <li>
+                                    <label>原手机号：</label>
+                                    <div style="width: calc(100% - 124px);">
+                                        <input type="text" id="oldPhone" readonly>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label><span class="red-icon"> * </span>短信验证码：</label>
+                                    <div style="width: calc(100% - 124px);">
+                                        <input type="text" class="oldCode">
+                                        <!-- 获取验证码 -->
+                                        <input type="button" value="获取验证码" class="centerCode getOldCode">
+                                        <!-- <span class="codewarn"></span> -->
+                                        <input type="button" value="60S" class="centerCode codeOldTime">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label><span class="red-icon"> * </span>新手机号：</label>
+                                    <div style="width: calc(100% - 124px);">
+                                        <input type="text" id="newPhone" disabled="disabled">
+                                    </div>
+                                </li>
+                                <li>
+                                    <label><span class="red-icon"> * </span>短信验证码：</label>
+                                    <div style="width: calc(100% - 124px);">
+                                        <input type="text" class="newCode">
+                                        <!-- 获取验证码 -->
+                                        <input type="button" value="获取验证码" class="centerCode getNewCode" disabled="disabled">
+                                        <input type="button" value="60S" class="centerCode codeNewTime">
+                                    </div>
+                                </li>
+                            </ul>
+                            <input type="button" value="确定" id="immedia-perfect">
+                        </form>
+                        <!-- 关闭 -->
+                        <div id="closeBind" class="closephoneEmail"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <!-- 邮箱 -->
+                    <div class="bindEmails">
+                        <h3>绑定邮箱</h3>
+                        <div class="emailInput">
+                            <label><span class="red-icon"> * </span>邮箱：</label>
+                            <input type="text" id="emails">
+                        </div>
+                        <input type="button" value="确定" id="email-perfect">
+                        <!-- 关闭 -->
+                        <div id="closeBindEmail" class="closephoneEmail"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <!-- 设置密码 -->
+                    <div class="setCompressPwd">
+                        <h3 class="pwdTitle">设置解压密码</h3>
+                        <div class="compressInput">
+                            <span>密码：</span>
+                            <input type="text" id="compressPwd">
+                            <p id="setComPresscon"></p>
+                        </div>
+                        <input type="button" value="确定" id="compressPwd-perfect">
+                        <!-- 关闭 -->
+                        <div id="closeBindCompressPwd" class="closeBindCompressPwd"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <!-- 修改密码 -->
+                    <div class="updatePwd">
+                        <h3>修改解压密码</h3>
+                        <div class="updatePwdInp">
+                            <span><label style="color: red">*</label>旧密码：</span>
+                            <input type="password" class="oldPwd" placeholder="请输入旧密码">
+                        </div>
+                        <div class="updatePwdInp">
+                            <span>新密码：</span>
+                            <input type="password" class="newPwd" placeholder="请输入新密码">
+                        </div>
+                        <div class="updatePwdInp">
+                            <span>确认新密码：</span>
+                            <input type="password" class="trueNewPwd" placeholder="请确认新密码">
+                        </div>
+                        <input type="button" value="确定" id="update-perfect" disabled="disabled">
+                        <div style="margin-top: 25px;line-height: 22px;text-align: left">
+                            <p>1：修改密码：旧密码+新密码+确认新密码；</p>
+                            <p>2：取消密码：旧密码+不填新密码+不填确认新密码；</p>本次修改/取消操作仅对操作后的检测生效，本次操作前的所有检测包只能用之前的密码解压，请您牢记之前的密码，以免无法查看之前的检测结果。
+                        </div>
+                        <a href="javascript:;" style="float:right;margin-top:10px;color:#3A7CFF" id="forgetPwd">忘记密码</a>
+                        <!-- 关闭 -->
+                        <div id="closeupdatePwd" class="closeupdatePwd"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <!-- 二次确定(修改)按钮 -->
+                    <div class="clearfix twoTrueBtn">
+                        <h3>温馨提示</h3>
+                        <p class="twoTrueCon"></p>
+                        <div class="btn">
+                            <button id="trueTwoBtn">确定</button>
+                            <!-- <button id="cancelTwoBtn">取消</button> -->
+                        </div>
+                        <!-- 关闭 -->
+                        <div id="closetwoTrueBtn" class="closetwoTrueBtn"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <!--设置登录密码-->
+                    <div class="setLoginPwd" style="display:none">
+                        <h3>新增登录密码</h3>
+                        <form action="">
+                            <div class="form-wrap">
+                                <div class="input-wrap">
+                                    <label for=""><span class="red-icon"> * </span>密码：</label>
+                                    <input type='password' name='passwordField' id='passwordField' class='form-control' autocomplete='new-password'
+                                        required='required' />
+                                </div>
+                                <p class="form-warn" id="gs">密码格式不正确！</p>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="input-wrap">
+                                    <label for=""><span class="red-icon"> * </span>确认密码：</label>
+                                    <input type="password" id="loginTwoPwd">
+                                </div>
+                                <p class="form-warn contractPwd">两次密码输入不正确！</p>
+                            </div>
+                            <div class="confirm-wrap">
+                                <p style="color: #666">注：新增登录密码成功后，您可使用账号＋密码登录。</p>
+                                <input type="button" value="确定" id="setLoginPwdBtn">
+                            </div>
+                        </form>
+                        <!-- 关闭 -->
+                        <div id="closesetLoginPwd" class="closesetLoginPwd"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                    <div class="updateLoginPwd" style="display:none">
+                        <h3>修改登录密码</h3>
+                        <form action="">
+                            <div class="form-wrap">
+                                <div class="input-wrap">
+                                    <label for=""><span class="red-icon"> * </span>旧密码：</label>
+                                    <input type="password" class="oldLoginPwd" placeholder="请输入旧密码">
+                                </div>
+                                <p class="form-warn pldPwdWarn">请输入旧密码！</p>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="input-wrap">
+                                    <label for=""><span class="red-icon"> * </span>新密码：</label>
+                                    <input type="password" name="updatePwdField" id="updatePwdField" class='form-control' autocomplete='new-password'
+                                        required='required' placeholder="请输入新密码" disabled>
+                                </div>
+                                <p class="form-warn" id="gsTwo">密码格式不正确！</p>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="input-wrap">
+                                    <label for=""><span class="red-icon"> * </span>确认新密码：</label>
+                                    <input type="password" placeholder="请确认新密码" class="trueupdatePwdField" disabled>
+                                </div>
+                                <p class="form-warn pldContrastPwdWarn">两次密码不一致！</p>
+                            </div>
+                            <div>
+                                <input type="button" value="确定" id="setLoginTwoPwdBtn">
+                            </div>
+                        </form>
+                        <!-- 关闭 -->
+                        <div id="closesetLoginTwoPwd" class="closesetLoginTwoPwd"><img src="../images/closeAuth.png" alt=""></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/perCenter.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/layui.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/swiper-3.4.2.min.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

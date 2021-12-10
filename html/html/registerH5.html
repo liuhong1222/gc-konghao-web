@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>空号检测双11，一起瓜分10亿条</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <script src="../js/rem.js"></script>
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+    </script>
+</head>
+<style>
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font: 12px/1.5 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+        color: #555;
+        background-color: #1E187A;
+        font-size: .6rem;
+        color: #fff;
+    }
+    input::-webkit-input-placeholder {
+        font-size: .5rem;
+    }
+    .head {
+        width: 100%;
+        height: 12.125rem;
+        background: url("../images/headH5.jpg") 100% 100%;
+        background-size: 100% 100%;
+    }
+
+    .conBg {
+        width: 100%;
+        height: 19.3rem;
+        background: url("../images/footer_bg.jpg") 100% 100%;
+        background-size: 100% 100%;
+    }
+
+    .registerCon {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+    
+    .registerCon a {
+        display: block;
+        width: 4.65rem;
+        height: 1.6rem;
+        margin: 0 auto;
+    }
+    .registerCon a img {
+        width: 100%;
+        height: 100%;
+    }
+    .conBg form .mobile {
+        width: 14.45rem;
+        height:2rem;
+        font-size: .6rem;
+        text-indent: 0.5em;
+        border-radius: .05rem;
+        margin-top: 0.2rem;
+        outline:none;  
+        border:0px;
+        box-sizing:border-box
+    }
+    .conBg form .codeInp {
+        width: 9.525rem;
+        height:2rem;
+        font-size: .6rem;
+        text-indent: 0.5em;
+        border-radius: 0rem;
+        outline:none;  
+        border:0px;
+        box-sizing:border-box;
+        border-top-left-radius:.05rem;
+        border-bottom-left-radius:.05rem;
+    }
+    .conBg form>div {
+        margin-top: .4rem
+    }
+    .conBg form  p {
+        margin: 0 auto;
+        width: 14.45rem;
+        text-align: left;
+        font-size: .4rem;
+        color: red;
+    }
+    .conBg form .verificateMobile,.conBg form .verificateCode {
+        visibility:hidden;
+    }
+    .conBg form .getCodeh5,.conBg form .countDown {
+        width: 4.925rem;
+        height:2rem;
+        line-height: 2rem;
+        font-size: .6rem;
+        background-color: #4343ff;
+        border:0px;
+        border-top-right-radius:.05rem;
+        border-bottom-right-radius:.05rem; 
+        outline: none;
+    }
+    .conBg form .countDown{
+        display: none;
+    }
+    .conBg form  .registerBtn {
+        width: 14.5rem;
+        height:2rem;
+        font-size: .6rem;
+        background-color: #4343ff;
+        border-radius: .05rem;
+        line-height: 2rem;
+        margin: 0.4rem auto
+    }
+    .conBg .activeInfo {
+        width: 14.5rem;
+        text-align: left;
+        margin: 1.15rem auto 0rem;
+    }
+    .conBg .activeInfoTime {
+        margin-top: 0.7rem
+    }
+    .conBg .activeInfo p {
+        line-height: .75rem
+    }
+    .conBg .activeInfo p:first-child {
+        line-height: 0rem
+    }
+    .tipBox {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -3rem;
+    margin-top: -1.625rem;
+    padding: .5rem;
+    width: 5.5rem;
+    /* min-height: 1.5rem; */
+    border:.025rem solid #273b87;
+    background-color: rgba(9, 16, 44, .9);
+    text-align: center;
+    z-index: 99999;
+    font-size: .4rem;
+    color: #fff;
+    display: none;
+}
+</style>
+
+<body>
+    <!-- 头部开始 -->
+    <header>
+        <div class="head"></div>
+    </header>
+    <section>
+        <div class="conBg">
+            <div class="registerCon">
+                <a href="javascript:;">
+                    <img src="../images/registerIcon.jpg" alt="">
+                </a>
+                <form action="">
+                    <div>
+                        <input type="text" placeholder="请输入手机号（必填）" class="mobile">
+
+                    </div>
+                    <p class="verificateMobile">请输入手机号!</p>
+                    <div style="display:flex;justify-content:center">
+                        <input type="text" placeholder="请输入验证码" class="codeInp">
+                        <div class="getCodeh5">发送验证码</div>
+                        <div class="countDown">60S</div>
+                    </div>
+                    <p class="verificateCode">请输入验证码!</p>
+                    <div class="registerBtn">立即注册</div>
+                </form>
+                <div class="activeInfo">
+                    <p>活动细则：</p>
+                    <p>新用户首次登录<span class="getDomain"></span>即赠送5000条空号在线检测条数，活动时间内首次充值即赠送充值条数的10%，完成首次登录后即成为老用户可享
+                        受“老带新”活动赠送，最高享受新人充值条数的100%赠送，详情请登录<span class="getDomain"></span>进行查看。</p>
+                </div>
+                <div class="activeInfo activeInfoTime">
+                    <p>活动时间：</p>
+                    <p>2018年11月8日00:00:00至2018年11月18日23:59:59</p>
+                </div>
+            </div>
+        </div>
+        '<div class="tipBox">' + '</div>'
+    </section>
+    <script>
+        document.write("<script type='text/javascript' src='../js/rigisterH5.js?st=" + currTime + "'><\/script>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-1.11.1.0.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+<style>
+    #checkRulesList {
+        position: absolute;
+        left: 430px;
+        top: 40px;
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="wrapper faceLive-wrapper">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <!-- banner -->
+        <div id="web_bg" class="web_bg_accTwo"></div>
+        <!-- 立即接入按钮 -->
+        <div class="w1200">
+            <div class="faceLive-access  faceLive-access-tiao">
+                立即接入
+            </div>
+        </div>
+        <section>
+            <div class="face-live-tabs">
+                <div class="w1200 faceLive-con">
+                    <ul class="clearfix ">
+                        <li class="con active faceCon" data-href="#tab1">
+                            <div>
+                                <a href="javascript:;"><img src="../images/face.png" alt=""></a>
+                                <div>
+                                    <h3>人脸比对</h3>
+                                    <p>人脸1：1对比，输入两张人脸照片系统根据人工智能算法返回相似度值，用 百分数表示，用于人证合一验证
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="choose"></span>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li class="con liveCon" data-href="#tab2">
+                            <div>
+                                <a href="javascript:;"><img src="../images/live.png" alt=""></a>
+                                <div>
+                                    <h3>活体检测</h3>
+                                    <p>实时反馈眼睛、嘴巴、头部姿态等状态，通过给用户设定完成相关动作，判断是否为活体。支持指定生效的动作顺序
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="choose"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 人脸比对内容 -->
+            <div class="w1200  contentTabs face-con" id="tab1">
+                <h3>人脸比对</h3>
+                <p>人脸1：1对比，输入两张人脸照片系统根据人工智能算法返回相似度值，用百分数表示，用于人证合一验证</p>
+                <img src="../images/faceImg.jpg" alt="">
+            </div>
+            <!-- 活体检测内容 -->
+            <div class="live-con contentTabs" id="tab2">
+                <h3>活体检测</h3>
+                <p>实时反馈眼睛、嘴巴、头部姿态等状态，通过给用户设定完成相关动 作，判断是否为活体。支持指定生效的动作顺序</p>
+                <img src="../images/hhh.jpg" alt="">
+            </div>
+        </section>
+
+        <!-- 产品优势 -->
+        <section>
+            <div class="w1200  facePro-advent">
+                <h2>产品优势</h2>
+                <ul class="clearfix">
+                    <li>
+                        <div>
+                            <img src="../images/suanfa.png" alt="">
+                            <h3>算法领先</h3>
+                            <p>基于专业的深度学习算法和海量数据训练，人脸检测和人脸识别算法在最权威的公开评测比 赛中排名世界领先
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="../images/wending.png" alt="">
+                            <h3>稳定高效</h3>
+                            <p> 提供企业级稳定、精确的大流量服务。支持毫 秒级的识别响应能力、弹性灵活的高并发承载 及99.99%的可靠性保障
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="../images/jiandan.png" alt="">
+                            <h3>简单易用</h3>
+                            <p>可通过API参数自由组合各个人脸技术模块， 实现不同的功能
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="../images/keao.png" alt="">
+                            <h3>稳定可靠</h3>
+                            <p>依托深度学习实验室的技术实力，提供稳定、 精确的大流量服务
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="../images/shibie.png" alt="">
+                            <h3>识别精度高</h3>
+                            <p>人脸识别技术国际领先，识别准确率超过百分 之九十九
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="../images/htjc.png" alt="">
+                            <h3>活体检测技术</h3>
+                            <p>SDK+接口双重融合检测，可抵御照片、视频 等攻击，精确区分活体，安全可靠
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 应用场景 -->
+        <section>
+            <div class="w1200 faceApply">
+                <h2>应用场景</h2>
+                <ul class="clearfix">
+                    <li>
+                        <div class="title">互联网金融</div>
+                        <div>
+                            通过自拍照与身份证照或公安系统照片之间的人脸对 比，核实用户身份是否属实，优化金融等高风险行业 复杂的身份验证流程
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title1">互联网金融</div>
+                        <div>
+                            通过自拍照与身份证照或公安系统照片之间的人脸对 比，核实用户身份是否属实，优化金融等高风险行业 复杂的身份验证流程
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title2">互联网金融</div>
+                        <div>
+                            通过自拍照与身份证照或公安系统照片之间的人脸对 比，核实用户身份是否属实，优化金融等高风险行业 复杂的身份验证流程
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- 实时联网 -->
+        <section>
+            <div class="realnetwork">
+                <div class="w1200 realTimeNet">
+                    <img src="../images/shandian.png" alt="">
+                    <p><span>实时联网</span> <span>快速查询</span><span>安全可靠</span></p>
+                    <div id="immediate-access" class="faceLive-access-tiao">立即接入</div>
+                </div>
+            </div>
+        </section>
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/faceLive.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

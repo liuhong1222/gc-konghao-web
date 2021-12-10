@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>空号检测</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?84357ad1fa1b22197508d8761d0bee37";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #09102C;
+            background-image: url(../images/beijign.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+        }
+        #fileName{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            /* cursor: pointer; */
+        }
+        #checkRulesList {
+            position: absolute;
+            left: 430px;
+            top: 40px;
+            display: none;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?5c82b93d14cd5408841b0f21c7752204";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script language="javascript">
+        function RunOnBeforeUnload() {
+            window.onbeforeunload = function () {
+                return "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="empty-wrapper wrapper">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <section>
+            <div style="height:90px">
+                <div id="titleLogo"></div>
+                <div class="file-box">
+                    <div class="file fl" id="fileName" title="">请上传文件进行检测</div>
+                    <input id="file" type="file" accept="text/plain" style="display: none;" name="">
+                    <button id="fileBtn" class="fileBtn fl">浏览</button>
+                    <button id="notAllow" class="fileBtn fl">浏览</button>
+                    <p class="tip fl">注:文件格式<span style="font-weight: bold;color: #98abcf">仅支持TXT格式</span>文件／每行一个手机号码／支持最低3001—150W条号码(20M)上传</p>
+                    <button id="sendBtn">点击上传</button>
+                    <button id="test">立即检测</button>
+                    <!-- 关闭检测列表，显示这个 -->
+                    <div id="testing" style="display: none">
+                        <img class="loading" src="../images/loading.png">
+                        <img class="right-icon" src="../images/right_icon.png">
+                        <span class="fl">空号智能检测</span>
+                        <span class="text fl">正在检测</span>
+                    </div>
+                    <!-- 读取文件 -->
+                    <div class="readFileWait">
+                        <p>文件读取中，请勿离开<span class="dotting"></span></p>
+                    </div>
+                    <progress style="" id="barProgress"></progress>
+                    <p id="progressBar" style="color: #fff; width:500px;display:none;  position: absolute; top: 188px;left: 106px;">0
+                        bytes</p>
+                </div>
+                <!-- 进度条 -->
+
+                <div id="testBox" class="animated" style="display: none">
+                    <h1>空号检测</h1>
+                    <span class="close"></span>
+                    <div id="loadingBox" class="circle">
+                        <div id="progress">0%</div>
+                        <div id="loading1" class="circle"></div>
+                        <div id="loading2" class="circle"></div>
+                        <div id="loading3" class="circle"></div>
+                    </div>
+                    <div id="fileLoading">文件解析中,请稍等</div>
+                    <p>正在检测（<span id="runCount">0</span>/<span id="allCount"></span>）</p>
+
+                    <div class="numList-wrapper">
+                        <!-- 检测的列表 -->
+                        <ul id="numList" class="clearfix">
+
+                        </ul>
+                    </div>
+                    <div class="des">无需等待，系统后台自动执行......</div>
+                </div>
+
+                <!--提示余额不足  -->
+                <div id="noBalance" style="display: none">
+                    <img src="../images/notice.png">
+                    <p>抱歉!当前余额不足</p>
+                    <p>无法检测</p>
+                    <button><a href="./recharge.html">立即充值</a></button>
+                    <span id="close1"></span>
+                </div>
+
+                <!-- 完成 -->
+                <div id="doneBox">
+                    <img src="../images/success.png">
+                    <p class="p1">恭喜！检测完成</p>
+                    <p class="p2">本次检测自动扣除余额：<span class="red"><span class="cost"></span>条</span>
+                    </p>
+                    <!-- <p class="p3">账户余额：<span style="color:#1f822e;"><span class="last"></span>条</span>
+                    </p> -->
+                    <p class="p4"><span id="second">10</span>s后进入检测结果页面，或点击<a href="./textRecord.html">直接进入</a></p>
+                </div>
+                <div id="mask"></div>
+            </div>
+        </section>
+
+        <!-- <footer>
+            <div style="height:30px;">
+                <span class="msj-companyName"></span> &nbsp;&nbsp;<span>版权所有Copyright</span><span class="msj-copyright"></span>
+            </div>
+            <div style="height:30px;">
+                <span>公司地址：</span><span class="msj-adress"></span><span style="margin-left: 16px;" class="contactInfoName">联系方式：</span><span
+                    class="contactInfo"></span>
+            </div>
+            <div style="height:30px;">
+                <span>增值电信业务经营许可证：</span><span class="msj-licence"></span> &nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn"
+                    target="_blank" style="color:#4d5668"><span class="msj-icpRecord"></span></a>&nbsp;&nbsp;<span
+                    class="msj-policeRecord"></span>
+            </div>
+        </footer> -->
+    </div>
+</body>
+</body>
+<script>
+    document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+    document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+    document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+    document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+    document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+    document.write("<script type='text/javascript' src='../js/empty.js?st=" + currTime + "'><\/script>");
+
+</script>
+
+<center>
+    <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+    <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+</center>
+
+</html>

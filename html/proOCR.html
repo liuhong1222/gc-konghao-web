@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-1.11.1.0.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+<style>
+    #checkRulesList {
+    position: absolute;
+    left: 430px;
+    top: 40px;
+    display: none;
+}
+</style>
+
+<body>
+    <div class="wrapper faceLive-wrapper">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <!-- banner -->
+        <div id="web_bg" class="web_bg_ocrpro"></div>
+        <!-- 立即接入按钮 -->
+        <!-- 立即接入 -->
+        <div class="w1200">
+            <div id="immed-access" class="immed-tests ocr-access-tiao">
+                立即接入
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="proOCR">
+            <ul class="clearfix w1200">
+                <li class="active identOCR conocr" data-href="#tab1" data-url="./proOcrResult.html?url=ident">
+                    <div>
+                        <a href="JavaScript:;"><img src="../images/masocr2.png" alt=""></a>
+                        <h3>身份验证OCR</h3>
+                        <p>支持对二代居民身份证正反面的关键 字识别，识别准备率可达98%以上
+                        </p>
+                        <button class="proAccessBtn">立即接入</button>
+                        <span class="choose"></span>
+                    </div>
+                </li>
+                <li class="businOCR conocr" data-href="#tab2" data-url="./proOcrResult.html?url=busin">
+                    <div>
+                        <a href="JavaScript:;"><img src="../images/yyzocr2.png" alt=""></a>
+                        <h3>营业执照OCR</h3>
+                        <p>支持对营业执照关键字段的识别，包括单位名称、法人、地址等
+                        </p>
+                        <button class="proAccessBtn">立即接入</button>
+                        <span class="choose"></span>
+                    </div>
+                </li>
+                <li class="bankOCR conocr" data-href="#tab3" data-url="./proOcrResult.html?url=bank">
+                    <div>
+                        <a href="JavaScript:;"><img src="../images/bankocr3.png" alt=""></a>
+                        <h3>银行卡OCR</h3>
+                        <p>可以识别图片中的银行卡号、银行卡类型、银行名称等信息
+                        </p>
+                        <button class="proAccessBtn">立即接入</button>
+                        <span class="choose"></span>
+                    </div>
+                </li>
+                <li class="driverOCR conocr" data-href="#tab4" data-url="./proOcrResult.html?url=driver">
+                    <div>
+                        <a href="JavaScript:;"><img src="../images/jszocr2.png" alt=""></a>
+                        <h3>驾驶证OCR</h3>
+                        <p>识别驾驶证，返回姓名、性别、驾驶证号、初始领证日期、准驾车型等
+                        </p>
+                        <button class="proAccessBtn">立即接入</button>
+                        <span class="choose"></span>
+                    </div>
+                </li>
+            </ul>
+
+            <!--身份证OCR内容 -->
+            <div class="w1200 ident-con ocrcontentTabs" id="tab1">
+                <h2>我们的优势</h2>
+                <ul>
+                    <li>
+                        <a href="javaecript:;"> <img src="../images/sujumiaos.png" alt=""></a>
+                        <div>
+                            <h3>数据全面</h3>
+                            <p>拥有强大的数据资源，保障数据全面性和准确率</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javaecript:;"> <img src="../images/ssly.png" alt=""></a>
+                        <div>
+                            <h3>渠道多样</h3>
+                            <p>多条备用渠道保障服务稳定</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javaecript:;"> <img src="../images/ak.png" alt=""></a>
+                        <div>
+                            <h3>安全可靠</h3>
+                            <p>数据传递多重加密、专业人员定期维护</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javaecript:;"> <img src="../images/ljfgfw.png" alt=""></a>
+                        <div>
+                            <h3>及时响应</h3>
+                            <p>行业领先的响应速度，24小时为您保驾护航</p>
+                        </div>
+                    </li>
+                </ul>
+                <h2>使用场景</h2>
+                <div class="use-scene">
+                    <ul>
+                        <li>保险</li>
+                        <li>担保</li>
+                        <li>人力资源</li>
+                        <li>旅游</li>
+                        <li>法律</li>
+                    </ul>
+                    <ul>
+                        <li>租赁</li>
+                        <li>电商</li>
+                        <li>贷款</li>
+                        <li>金融</li>
+                    </ul>
+                    <ul>
+                        <li>……</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--驾驶证OCR内容  -->
+            <div class="dirver-con ocrcontentTabs" id="tab4">
+                <h2>我们的优势</h2>
+                <p>极速数据产品优势</p>
+                <ul>
+                    <li>
+                        <img src="../images/jingzhun.png" alt="">
+                        <h3>精准</h3>
+                        <p>识别准确率大于98.2%</p>
+                    </li>
+                    <li>
+                        <img src="../images/dijia.png" alt="">
+                        <h3>低价</h3>
+                        <p>同类产品价格最优</p>
+                    </li>
+                    <li>
+                        <img src="../images/quick2.png" alt="">
+                        <h3>快速</h3>
+                        <p>直连接口，速度全开 </p>
+                    </li>
+                    <li>
+                        <img src="../images/gaoxiiao.png" alt="">
+                        <h3>高效</h3>
+                        <p>先进校验算法</p>
+                    </li>
+                </ul>
+                <div class="user-sence">
+                    <h2>使用场景</h2>
+                    <p>汽车类接口应用场景</p>
+                    <ul>
+                        <li>
+                            <span></span>
+                            <p>汽车网站</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>汽车厂家</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>汽车4s店</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>违章查询APP</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>汽车租赁公司</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>车辆保险服务</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--银行卡OCR内容 -->
+            <div class="bank-con ocrcontentTabs" id="tab3">
+                <h2>我们的优势</h2>
+                <p>极速数据产品优势</p>
+                <ul>
+                    <li>
+                        <img src="../images/jingzhun.png" alt="">
+                        <h3>精准</h3>
+                        <p>识别准确率大于98.2%</p>
+                    </li>
+                    <li>
+                        <img src="../images/dijia.png" alt="">
+                        <h3>低价</h3>
+                        <p>同类产品价格最优</p>
+                    </li>
+                    <li>
+                        <img src="../images/quick2.png" alt="">
+                        <h3>快速</h3>
+                        <p>直连接口，速度全开 </p>
+                    </li>
+                    <li>
+                        <img src="../images/gaoxiiao.png" alt="">
+                        <h3>高效</h3>
+                        <p>先进校验算法</p>
+                    </li>
+                </ul>
+                <div class="user-sence">
+                    <h2>使用场景</h2>
+                    <p>识别类接口应用场景</p>
+                    <ul class="w1200 lineOne">
+                        <li>
+                            <p>金融</p>
+                        </li>
+                        <li>
+                            <p>贷款</p>
+                        </li>
+                        <li>
+                            <p>担保</p>
+                        </li>
+                        <li>
+                            <p>法律</p>
+                        </li>
+                        <li>
+                            <p>航空</p>
+                        </li>
+                        <li>
+                            <p>物流</p>
+                        </li>
+                        <li>
+                            <p>婚恋</p>
+                        </li>
+                    </ul>
+                    <ul class="w1200 linetwo">
+                        <li>
+                            <p>旅游</p>
+                        </li>
+                        <li>
+                            <p>保险</p>
+                        </li>
+                        <li>
+                            <p>人力资源</p>
+                        </li>
+                        <li>
+                            <p>租赁</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 营业执照ocr内容 -->
+            <div class="w1200 busine-con ocrcontentTabs" id="tab2">
+                <h2>我们的优势</h2>
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>安全保障</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>高效稳定</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>精准度</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>不限平台</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>秒出结果</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="../images/kaui.png" alt=""></a>
+                        <div>
+                            <h3>收费最低</h3>
+                            <p>产品深度研发，所有数据均脱敏处理， 多种加密方式，军用级安全标准
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 使用场景 -->
+                <h2>使用场景</h2>
+                <div class="use-sence w1200">
+                    <ul class="clearfix ">
+                        <li>
+                            <div>
+                                <h3>商户认证</h3>
+                                <p>在外卖、电商、分类信息网站可以使用营业执照帮助商 户快速的录入信息，提高输入效率、提升用户体验
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>银行开户、贷款</h3>
+                                <p>
+                                    在银行企业开户和贷款的场景下，能够帮助用户快熟的 录入企业的营业执照信息
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 实时联网 -->
+    <section>
+        <div class="realnetwork">
+            <div class="w1200 realTimeNet">
+                <img src="../images/shandian.png" alt="">
+                <p><span>实时联网</span> <span>快速查询</span><span>安全可靠</span></p>
+                <div id="immediate-access" class="ocr-access-tiao">立即接入</div>
+            </div>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <div id="footer"></div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/proOCR.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绑定手机</title>
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "''>");
+        document.write("<script type='text/javascript' src='../lib/jquery.js?st=" + currTime + "'><\/script>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+    <style>
+        section .indexLogo {
+            top: 35%;
+        }
+
+        #login-mode {
+            background: none;
+            top: 20%;
+            left: 50%;
+            margin-left: -250px;
+        }
+
+        #login-mode .bind-cell {
+            color: #666;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #login-mode .fast-bind {
+            letter-spacing: 1px;
+        }
+
+        #login-mode .back-login>a {
+            margin-top: 6px;
+            color: #3A7CFF;
+            display: inline-block;
+        }
+
+        #login-mode .quickLogin .quickLshow #wechartLoginBtn {
+            width: 239px;
+            height: 40px;
+            background-color: #3a7cff;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 40px;
+            color: #fefefe;
+            cursor: pointer;
+            margin: 30px 70px 0;
+        }
+
+        section .pro-btn {
+            top: 64%;
+            display: none;
+        }
+
+        .wechart {
+            border: 1px solid #f4f4f4;
+            box-shadow: 0 0 10px 1px rgba(199, 191, 191, 0.3);
+        }
+
+        .wechart .quickLogin .quickLshow input {
+            width: 500px
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="headerINDEX">
+        <div class="nav clearfix">
+            <div class="logo fl"></div>
+            <!-- <div class="entry fr">
+                <span>无需注册，</span>
+                <a href="javascript:;" id="quickLogin">快速登录</a>
+            </div> -->
+        </div>
+    </header>
+
+
+    <section>
+        <div id="login-mode" class="wechart" style="width: 450px;height:350px">
+            <div class="quickLogin">
+                <h3 class="bind-cell">绑定手机</h3>
+                <div class="quickLshow">
+                    <i class="phoneIcon"></i>
+                    <input type="text" placeholder="请输入手机号码" name="phone" class="phone" id="account" style="width:365px">
+                    <p class="iphone-warn">请输入手机号</p>
+                    <p id="warningTel" style="display: none;">手机格式不正确</p>
+                    <i class="tyan"></i>
+                    <input type="text" placeholder="请输入验证码" name="password" class="pwd" style="width:365px">
+                    <p class="password-warn">请输入验证码</p>
+                    <div id="wechartLoginBtn" class="fast-bind">快速绑定</div>
+                </div>
+                <div class="getCodes">
+                    <input type="text" value="获取验证码" class="getCode" name="getCode" readonly>
+                    <input type="text" value="60S" class="codeBtn" name="codeBtn">
+                </div>
+                <div class="back-login">
+                    <a href="./index.html">返回登录</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footerINDEX">
+        <div id="indexFooter">
+            <div>
+                <span class="msj-companyName"></span> &nbsp;&nbsp;<span>版权所有Copyright</span><span class="msj-copyright"></span>
+            </div>
+            <div>
+                <span>公司地址：</span><span class="msj-adress"></span>
+            </div>
+            <div>
+                <span>增值电信业务经营许可证：</span><span class="msj-licence"></span> &nbsp;&nbsp;<span class="msj-icpRecord"></span>                &nbsp;&nbsp;<span class="msj-policeRecord"></span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/index.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wechartLogin.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+
+</html>

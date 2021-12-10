@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>检测记录</title>
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/layui.css?st=" + currTime + "'>");
+        document.write("<link rel='stylesheet' href='../css/swiper-3.4.2.min.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+
+<body>
+    <div class="wrapper textRecord-wrapper">
+        <!-- 头部 -->
+        <!-- <header class="header-wrap">
+            <img id="headLogoImg" src="" alt="">
+        </header> -->
+        <!-- 轮播图 -->
+        <!-- <section>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pic1">
+                        <a href="javascript:;"></a>
+                        <div class="w1100">
+                            <div id="immed-known1" class="immed-tests empty-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic2">
+                        <a href="javascript:;"></a>
+                        <div class="w1100">
+                            <div id="immed-known2" class="immed-tests face-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic3">
+                        <a href="javascript:;"></a>
+                        <div class="w1100">
+                            <div id="immed-known3" class="immed-known opera-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide pic4">
+                        <a href="javascript:;"></a>
+                        <div class="w1100">
+                            <div id="immed-known4" class="immed-known accTwo-access">
+                                立即接入
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section> -->
+        <!-- 检测结果 -->
+        <!-- 侧边栏 -->
+        <div id="aside"></div>
+        <!-- 右侧联系我们 -->
+        <div id="online-service"></div>
+        <!-- 内容 -->
+        <div id="main-section" class="section-wrap">
+            <!-- title -->
+            <!-- <section>
+                <div class="title-wrap">
+                    <span>历史检测</span>
+                </div>
+            </section> -->
+            <section>
+                <div class="textRecord-bg">
+                    <img src="../images/history_bg.png" alt="" style="width: 100%;">
+                    <div class="textRecord-bg-text">
+                        <h2>数据真实有效</h2>
+                        <p>承载大量高效的检测数据，一键下载每月报表</p>
+                        <button>
+                            <a href="../html/empty.html">立即检测</a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- <section>
+                <div class="result-box">
+                    <p>检测结果</p>
+                    <ul class="clearfix">
+                        <li>
+                            <div>
+                                <h2>实号包</h2>
+                                <span class="line line1"></span>
+                            </div>
+                            <div class="box box1">
+                                <p>活跃用户</p>
+                            </div>
+                            <strong id="threePackage">0</strong>
+                            <p>大小：<span id="threePackageMb">0MB</span></p>
+                            <button id="downThree" class="downBtnFlag">下载</button>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>沉默包</h2>
+                                <span class="line line2"></span>
+                            </div>
+                            <div class="box box2">
+                                <p>超过六个月未激活的空号，近三个月平均流量低于30M的用户，建议当成无效处理。</p>
+                            </div>
+                            <strong id="nullPackage">0</strong>
+                            <p>大小：<span id="nullPackageMb">0MB</span></p>
+                            <button id="downNull" class="downBtnFlag">下载</button>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>空号包</h2>
+                                <span class="line line3"></span>
+                            </div>
+                            <div class="box box3">
+                                <p> 停机空号 </p>
+                            </div>
+                            <strong id="sixPackage">0</strong>
+                            <p>大小：<span id="sixPackageMb">0MB</span></p>
+                            <button id="downSix" class="downBtnFlag">下载</button>
+                        </li>
+                        <li>
+                            <div>
+                                <h2>风险包</h2>
+                                <span class="line line4"></span>
+                            </div>
+                            <div class="box box4">
+                                <p> 长时间关机或未开通语音服务以及易投诉的用户 </p>
+                            </div>
+                            <strong id="shutDownPage">0</strong>
+                            <p>大小：<span id="shutDownPageMb">0MB</span></p>
+                            <button id="shutDown" class="downBtnFlag">下载</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w1100 download-box">
+                    <p>一键下载全部状态</p>
+                    <button id="downAll">下载</button>
+                </div>
+            </section> -->
+            <div class="page-width">
+                <!-- 标题 -->
+                <section>
+                    <div class="page-title">
+                        <h2>历史检测</h2>
+                        <p>HISTORY DETECTION</p>
+                    </div>
+                </section>
+                <!-- 历史检测 -->
+                <section>
+                    <div class="clearfix history-record">
+                        <p>历史检测记录</p>
+                        <!-- 筛选 -->
+                        <div>
+                            <div class="context clearfix">
+                                <div class="timeSel fl selectTime" id="date">
+                                    <label>日期：</label>
+                                    <input type="text" id="dateTimeStart"> -
+                                    <input type="text" id="dateTimeEnd">
+                                    <button class="queryDate">查询</button>
+                                    <button class="exportExcel">导出</button>
+                                </div>
+                                <div class="opert fr">
+                                    <span>批量操作</span>
+                                    <ul class="opertCon">
+                                        <!-- <li class="exportExcel">导出</li> -->
+                                        <li class="exportAll">批量下载</li>
+                                        <li class="delAllBtn">批量删除</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hisRecordTitle">
+                            <!-- <button id="delAll">删除</button> -->
+                            <dl class="clearfix">
+                                <dt class="checkClass">
+                                    <input id="checkAll" style="margin-right:8px; display: none" type="checkbox" class="checkbox" />
+                                    <label for="checkAll"></label> 选择
+                                </dt>
+                                <dt>名称</dt>
+                                <dt>大小</dt>
+                                <dt>日期</dt>
+                                <dt>实号包（条）</dt>
+                                <dt>沉默包（条）</dt>
+                                <dt>空号包（条）</dt>
+                                <dt>风险包（条）</dt>
+                                <dt>总条数（条） </dt>
+                                <dt>操作</dt>
+                            </dl>
+                        </div>
+                        <div class="clearfix hisRecordList">
+        
+                        </div>
+                        <!-- 分页 -->
+                        <div id="page" class="fr"></div>
+                        <!-- 删除弹窗 -->
+                        <div class="delDialog">
+                            <p>提示：</p>
+                            <p>删除后该条检测记录将无法恢复，是否确认删除？</p>
+                            <button class="trueDel">确认</button>
+                            <div id="delDialogClose" class="delDialogClose"><img src="../images/closeAuth.png" alt=""></div>
+                        </div>
+                        <div class="reveal-modal-bg"></div>
+                        <!-- 加载动画 -->
+                        <div class="spinner">
+                            <div class="spinner-container container1">
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                            </div>
+                            <div class="spinner-container container2">
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                            </div>
+                            <div class="spinner-container container3">
+                                <div class="circle1"></div>
+                                <div class="circle2"></div>
+                                <div class="circle3"></div>
+                                <div class="circle4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 折线图 -->
+                <section>
+                    <div class="">
+                        <div class="fold-line">
+                            <p style="
+                            font-weight: 500;
+                            color: #252A3D;
+                            font-size: 20px;">历史检测/月</p>
+                            <div style="height:80px;margin:0 auto" class="echartsBtn">
+                                <label class="" style="margin-top: 25px;
+                                color: #252A3D;
+                                font-size: 14px;
+                                font-weight: 500;"> 选择月份：</label>
+                                <input type="text" class="" id="lineMonth">
+                                <button id="downExcel"><span><img src="../images/downicon.png" alt=""></span> 下载报表</button>
+                            </div>
+                            <div style="text-align:center;font-weight:700;margin-bottom: 20px;"><span id="monthShow"></span>
+                                月检测结果展示</div>
+                            <p style="text-align: center;display: none;color:#C0C3CC" class="nullRecord">此月无检测数据!</p>
+                            <div id="mainMore" style="height:400px; margin:0 auto"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>    
+        
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/echarts.common.min.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/textRecord.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/laydate/laydate.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/layui.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/swiper-3.4.2.min.js?st=" + currTime + "'><\/script>");
+
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+
+</html>

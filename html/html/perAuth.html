@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>认证</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script>
+        var currTime = Date.parse(new Date());
+        document.write("<script type='text/javascript' src='../lib/jquery-3.2.1.min.js?st=" + currTime + "'><\/script>");
+        document.write("<link rel='stylesheet' href='../css/basic.css?st=" + currTime + "''>");
+        document.write("<link rel='stylesheet' href='../dist/main.css?st=" + currTime + "'>");
+        document.write("<link id='icon' rel='SHORTCUT ICON' href=''>");
+    </script>
+</head>
+<style>
+    body {
+        background-color: #F1F1F1;
+    }
+    #checkRulesList {
+    position: absolute;
+    left: 430px;
+    top: 40px;
+    display: none;
+}
+</style>
+
+<body>
+    <div class="wrapper perAuth-wrapper mainFooter">
+        <!-- 头部 -->
+        <div id="header" style="height:60px;"></div>
+        <!-- 面包屑导航 -->
+        <!-- <section> -->
+        <div class="perAuth-info ">
+            <div class="bread-nav w1200">
+                <span>当前位置：</span><a href="javascript:;">账户资料</a><label>></label><a href="javascript:;" id="showName"></a>
+            </div>
+            <!-- 个人认证 -->
+            <div class="w1200 auth-Details  authHide">
+                <!-- 进度切换 -->
+                <div class="clearfix progress-bar">
+                    <span class="subAuth">提交认证信息</span>
+                    <span class="waitAUth">等待系统审核</span>
+                    <span class="authOk">完成</span>
+                    <span class="authError" style="display:none">驳回</span>
+                </div>
+                <!-- 提交认证内容 -->
+                <div class="subAuthCon" style="display:none">
+                    <div class="uploadIdent">
+                        <span class="ident">身份证：</span>
+                        <div class="identImg" data-flag="positive">
+                            <img src="../images/uploadz.jpg" alt="">
+                            <input type="file" id="file" class="file" placeholder="ICCID" accept="image/*" capture="camera"
+                                style="display:none">
+                            <!-- <button><a href="javascript:;">点击上传</a>身份证正面</button> -->
+                        </div>
+                        <div class="identImg" data-flag="otherSide">
+                            <img src="../images/uploadf.jpg" alt="">
+                            <input type="file" id="file" class="file" placeholder="ICCID" accept="image/*" capture="camera"
+                                style="display:none">
+                            <!-- <button><a href="javascript:;">点击上传</a>身份证正面</button> -->
+                        </div>
+                        <p style="text-algin:left;margin-left:140px;">(身份证正反两页上传后，以下内容可自动识别)</p>
+                    </div>
+                    <form action="#">
+                        <ul>
+                            <li class="identNme">
+                                <label><a href="javascript:;">*</a>姓 &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;名</label>
+                                <input type="text" id="perName">
+                                <span>请输入姓名</span>
+                            </li>
+                            <li class="identity-code">
+                                <label><a href="javascript:;">*</a>身份证号</label>
+                                <input type="text" maxlength="19" value="" id="idno">
+                                <span>请输入身份证号</span>
+                            </li>
+                            <li>
+                                <label><a href="javascript:;">*</a>详细地址</label>
+                                <!-- <input type="text" id="address"> -->
+                                <textarea name="" id="address" cols="40" rows="3"></textarea>
+                                <span>请输入详细地址</span>
+                            </li>
+                            <li class="certif-period">
+                                <label><a href="javascript:;">*</a>证件期限</label>
+                                <input type="text" id="effectDate"><span>至</span>
+                                <input type="text" id="expireDate">
+                                <span>请输入证件期限</span>
+                            </li>
+                        </ul>
+                        <p>附件要求：</p>
+                        <div><a href="javascript:;">*</a>格式要求：扫描件需要使用jpg,jpeg,png图片格式</div>
+                        <div><a href="JavaScript:;">*</a>内容要求：身份证正，反两面</div>
+                        <div><a href="JavaScript:;">*</a>大小要求：不得超过1M</div>
+
+                        <input type="button" value="提交个人认证" id="submitAuth" class="submitBtn">
+                        <!-- <input type="button" value="保存" id="saveBtn"> -->
+                    </form>
+                </div>
+
+                <!-- 等待审核部分 -->
+                <div class="waitAuthNotice" style="display:none">
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../images/noticeAuth.png" alt="">
+                        </a>
+                        <span>您的认证正在等待审核，请耐心等待.....</span>
+                        <p>注：（预计三个工作日内完成审核。）</p>
+                    </div>
+                </div>
+
+                <!-- 完成部分 -->
+                <div class="authOk-Con" style="display:none">
+                    <div class="authOkCon">
+                        <a href="javascript:;">
+                            <img src="../images/perTrueIcon.png" alt="">
+                        </a>
+                        <span>已完成个人认证</span>
+                        <button class="fr transPre" style="">转企业认证</button>
+                    </div>
+                    <div style="margin-top:30px">
+                        <h3 style="margin-left:250px;color: #585f68;font-size:16px;">基本信息</h3>
+                        <form action="#" style="margin-top:30px">
+                            <ul>
+                                <li>
+                                    <label><a href="javascript:;">*</a>姓 &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;名</label>
+                                    <input type="text" id="userNameTrue" readonly>
+                                    <span>请输入姓名</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>身份证号</label>
+                                    <input type="text" maxlength="19" value="" id="idnoTrue" readonly>
+                                    <span>请输入身份证号</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>详细地址</label>
+                                    <textarea name="" cols="50" rows="" id="perAddressTrue" readonly></textarea>
+                                    <!-- <input type="text" id="perAddressTrue" readonly> -->
+                                    <span>请输入详细地址</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>证件期限</label>
+                                    <input type="text" style="width:123px;" id="effectTrue" readonly><span>&nbsp;&nbsp;&nbsp;&nbsp;至</span>
+                                    <input type="text" style="width:123px;" id="expriseTrue" readonly>
+
+                                    <span>请输入证件期限</span>
+                                </li>
+
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 被驳回内容 -->
+                <div class="authErrorCon" style="display:none">
+                    <a href="javascript:;">
+                        <img src="../images/bohui.png" alt="">
+                    </a>
+                    <span>
+                        您的认证申请已被系统驳回
+                    </span>
+                    <div class="errorRel">
+                        <p>
+                            <span>驳回原因：</span>
+                            <span class="errorRelCon"></span>
+                        </p>
+                    </div>
+                    <button class="reAuthBtn">重新提交个人认证</button>
+                </div>
+            </div>
+            <!-- authHide 用于隐藏 -->
+            <!-- 企业认证 -->
+            <div class="w1200 enterprise-Detailsa    authHide">
+                <!-- 进度切换 -->
+                <div class="clearfix enterprise-bar">
+                    <span class="subAuth">提交认证信息</span>
+                    <span class="waitAUth">等待系统审核</span>
+                    <span class="authOk">完成</span>
+                    <span class="authError" style="display:none">驳回</span>
+                </div>
+                <!-- 提交的认证 -->
+                <div class="subAuthCon" style="display:none">
+                    <div class="uploadIdent">
+                        <span class="ident"> 营业执照：</span>
+                        <div class="identImg" id="prise-Img" data-flag="enterprise">
+                            <img src="../images/uploadbtn.png" alt="">
+                            <input type="file" id="file" class="file" placeholder="ICCID" accept="image/*" capture="camera"
+                                style="display:none">
+                        </div>
+                        <p style="margin-left:140px">营业执照上传后，以下内容可自动识别</p>
+                    </div>
+                    <form action="">
+                        <ul>
+                            <li class="comName">
+                                <label><a href="javascript:;">*</a>公司名称</label>
+                                <input type="text" placeholder="请填写公司名称" id="name">
+                                <span>请填写公司名称</span>
+                            </li>
+                            <li>
+                                <label><a href="javascript:;">*</a>营业执照</label>
+                                <input type="text" placeholder="请填写营业执照" id="regnum">
+                                <span>请填写营业执照</span>
+                            </li>
+                            <li>
+                                <label><a href="javascript:;">*</a>公司地址</label>
+                                <input type="text" placeholder="请填写公司地址" id="prise-address">
+                                <span>请填写公司地址</span>
+                            </li>
+                            <li>
+                                <label><a href="javascript:;">*</a>法人名字</label>
+                                <input type="text" placeholder="请填写法人名字" id="person">
+                                <span>请填写法人名字</span>
+                            </li>
+                            <li class="certif-period">
+                                <label><a href="javascript:;">*</a>证件期限</label>
+                                <input type="text" id="certif-effectDate"><span>至</span>
+                                <input type="text" id="certif-expireDate">
+                                <span>请输入证件期限</span>
+                            </li>
+                            <li>
+                                <label><a href="javascript:;">*</a>经营范围</label>
+                                <!-- <input type="text" id="business"> -->
+                                <textarea name="" id="business" cols="50" rows="6"></textarea>
+                                <span>请输入经营范围</span>
+                            </li>
+                        </ul>
+                        <p>附件要求：</p>
+                        <div><a href="javascript:;">*</a>格式要求：扫描件需要使用jpg,jpeg,png图片格式</div>
+                        <div><a href="JavaScript:;">*</a>内容要求：上传营业执照正面</div>
+                        <div><a href="JavaScript:;">*</a>大小要求：不得超过1M</div>
+
+                        <input type="button" value="提交企业认证" id="pise-submitAuth" class="submitBtn">
+                        <!-- <input type="button" value="保存" id="prise-saveBtn" class="savebtn"> -->
+                    </form>
+                </div>
+
+                <!-- 等待审核部分 -->
+                <div class="waitAuthNotice" style="display:none">
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../images/noticeAuth.png" alt="">
+                        </a>
+                        <span>您的认证正在等待审核，请耐心等待.....</span>
+                        <p>注：（预计三个工作日内完成审核。）</p>
+                    </div>
+                </div>
+
+                <!-- 完成部分 -->
+                <div class="authOk-Con" style="display:none">
+                    <div class="authOkCon">
+                        <a href="javascript:;">
+                            <img src="../images/qiyeTrueIcon.png" alt="">
+                        </a>
+                        <span>已完成企业认证</span>
+                        <button class="fr transPre" style="">转个人认证</button>
+                    </div>
+                    <div style="margin-top:30px">
+                        <h3 style="margin-left:250px;color: #585f68;font-size:16px;">基本信息</h3>
+                        <form action="" style="margin-top:30px">
+                            <ul>
+                                <li class="comName">
+                                    <label><a href="javascript:;">*</a>公司名称</label>
+                                    <input type="text" placeholder="请填写公司名称" id="comTrue" readonly>
+                                    <span>请填写公司名称</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>营业执照号</label>
+                                    <input type="text" placeholder="请填写营业执照号" id="idcorTrue" readonly>
+                                    <span>请填写营业执照号</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>公司地址</label>
+                                    <textarea name="" id="comAddressTrue" cols="50" rows="3" readonly></textarea>
+                                    <!-- <input type="text" placeholder="请填写公司地址" id="comAddressTrue" readonly> -->
+                                    <span>请填写公司地址</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>法人名字</label>
+                                    <input type="text" placeholder="请填写法人名字" id="legalPerTrue" readonly>
+                                    <span>请填写法人名字</span>
+                                </li>
+                                <li class="certif-period">
+                                    <label><a href="javascript:;">*</a>营业期限</label>
+                                    <input type="text" style="width:123px;" id="priseEffTrue" readonly><span>&nbsp;&nbsp;&nbsp;&nbsp;至</span>
+                                    <input type="text" style="width:123px;" id="prisepisTrue" readonly>
+                                    <span>请输入营业期限</span>
+                                </li>
+                                <li>
+                                    <label><a href="javascript:;">*</a>经营范围</label>
+                                    <!-- <input type="text" id="businTrue" readonly> -->
+                                    <textarea name="" id="businTrue" cols="50" rows="6" readonly></textarea>
+                                    <span>请输入经营范围</span>
+                                </li>
+                            </ul>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- 被驳回内容 -->
+                <div class="authErrorCon" style="display:none">
+                    <a href="javascript:;">
+                        <img src="../images/bohui.png" alt="">
+                    </a>
+                    <span>
+                        您的认证申请已被系统驳回
+                    </span>
+                    <div class="errorRel">
+                        <p>
+                            <span>驳回原因：</span>
+                            <span class="errorRelCon"></span>
+                        </p>
+                    </div>
+                    <button class="reAuthBtn">重新提交企业认证</button>
+                </div>
+            </div>
+
+            <!-- 加载 -->
+            <!-- 加载动画 -->
+            <div class="spinner">
+                <div class="spinner-container container1">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container2">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+                <div class="spinner-container container3">
+                    <div class="circle1"></div>
+                    <div class="circle2"></div>
+                    <div class="circle3"></div>
+                    <div class="circle4"></div>
+                </div>
+            </div>
+        </div>
+        <!-- </section> -->
+        <!-- 底部 -->
+        <div id="footer"></div>
+    </div>
+    <script>
+        document.write("<script type='text/javascript' src='../js/gt.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/common.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/wxLogin.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/passwordRulesHelper.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/env.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/MEIQIA.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../js/perAuth.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/swiper-3.4.2.min.js?st=" + currTime + "'><\/script>");
+        document.write("<script type='text/javascript' src='../lib/laydate/laydate.js?st=" + currTime + "'><\/script>");
+    </script>
+    <center>
+        <script language="javascript" type="text/javascript" src="//js.users.51.la/19311708.js"></script>
+        <noscript><a href="//www.51.la/?19311708" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;"
+                    src="//img.users.51.la/19311708.asp" style="border:none" /></a></noscript>
+    </center>
+</body>
+<script>
+    //企业认证时间
+    priseTime()
+    function priseTime() {
+        //开始时间id="start",结束时间id="end";
+        var start = {
+            elem: '#certif-effectDate',
+            type: 'date',
+            min: '2000-09-10',
+            max: '2333-09-20',
+            show: true,
+            closeStop: '#start'
+        };
+        var end = {
+            elem: '#certif-expireDate',
+            type: 'date',
+            min: '2000-09-10',
+            max: '2333-09-20',
+            show: true,
+            closeStop: '#end'
+        };
+        lay('#certif-effectDate').on('click', function (e) {
+            if ($('#certif-expireDate').val() != null && $('#certif-expireDate').val() != undefined && $('#certif-expireDate').val() != '') {
+                start.max = $('#certif-expireDate').val();
+            }
+            laydate.render(start);
+        });
+        lay('#certif-expireDate').on('click', function (e) {
+            if ($('#certif-effectDate').val() != null && $('#certif-effectDate').val() != undefined && $('#certif-effectDate').val() != '') {
+                end.min = $('#certif-effectDate').val();
+            }
+            laydate.render(end);
+        });
+    }
+
+    // 个人认证
+    personTime()
+    function personTime() {
+        //开始时间id="start",结束时间id="end";
+        var start1 = {
+            elem: '#effectDate',
+            type: 'date',
+            min: '2000-09-10',
+            max: '2333-09-20',
+            show: true,
+            closeStop: '#start1'
+        };
+        var end1 = {
+            elem: '#expireDate',
+            type: 'date',
+            min: '2000-09-10',
+            max: '2333-09-20',
+            show: true,
+            closeStop: '#end1'
+        };
+        lay('#effectDate').on('click', function (e) {
+            if ($('#expireDate').val() != null && $('#expireDate').val() != undefined && $('#expireDate').val() != '') {
+                start1.max = $('#expireDate').val();
+            }
+            laydate.render(start1);
+        });
+        lay('#expireDate').on('click', function (e) {
+            if ($('#effectDate').val() != null && $('#effectDate').val() != undefined && $('#effectDate').val() != '') {
+                end1.min = $('#effectDate').val();
+            }
+            laydate.render(end1);
+        });
+    }
+
+</script>
+
+</html>
