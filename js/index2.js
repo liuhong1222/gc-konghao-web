@@ -75,6 +75,11 @@ $('#easyContainer').easyUpload({
     uploadFileIdAll.push(0)
     fileCountsArrAll.push(0)
     setCount();
+    
+    if ($('.test-over').is(":hidden")) {
+      handeldone();
+    }
+    
   },//上传失败回调函数
   deleteFunc: function (res) {
     console.log('删除回调', res);
@@ -104,6 +109,43 @@ function setCount() {
     }
   }
 };
+
+// 全部失败时，展示操作完成弹窗
+function handeldone() {
+  // debugger
+  // 全部上传异常
+  let ele = $('.easy_upload_queue_item').find('.easy_upload_status')
+  const resbool = ele.get().every((item) => {
+    return $(item).find('.status4').css('display') == 'block'
+      || $(item).find('.status20').css('display') == 'block'
+      || $(item).find('.status21').css('display') == 'block'
+      || $(item).find('.status9').css('display') == 'block'
+      || $(item).find('.status80').css('display') == 'block'
+  })
+  
+  // 系统异常
+  let ele1 = $('.easy_upload_queue_item')
+  const resbool1 = ele1.get().every((item) => {
+    return $(item).text().indexOf('系统异常') != -1
+  })
+
+  if (resbool || resbool1) {
+    $('.test-over').show()
+  } else {
+    $('.test-over').hide()
+  }
+}
+
+$("#test-over-confirm").off('click').click(function () {
+  $('.test-over').hide()
+  // 关闭页面
+  selectedFiles = {};
+  $(".easy_upload_queue").html("");
+  $(".notice-pop-up").hide();
+  $(".fileInput").val('').attr('data-count', 0);  // 上传清空
+  $(".msjTask").hide();
+  $(".msjPopup").hide()
+})
 
 function _handleChecked(param, status) {
   // $(param.upBar).css("background-color", "red");
@@ -149,19 +191,31 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
     } else if (res.resultObj.status == '5') {  //小于3001
       _handleChecked(param, '.status20');
       $(".easy_upload_percent").hide()
+      if ($('.test-over').is(":hidden")) {
+        handeldone();
+      }
       // $(".easy_check_percent").hide()
     } else if (res.resultObj.status == '6') {  //大于150万
       _handleChecked(param, '.status21');
       $(".easy_upload_percent").hide()
+      if ($('.test-over').is(":hidden")) {
+        handeldone();
+      }
     } else if (res.resultObj.status == '4') {  //余额不足
       _handleChecked(param, '.status9');
       $(".easy_upload_percent").hide()
+      if ($('.test-over').is(":hidden")) {
+        handeldone();
+      }
       // $(".easy_check_percent").hide()
     } else {
       // _handleChecked(param, '.status80');
       $(param.statusDiv).find('.status').hide().end().find('.status80').html(res.resultMsg);
       $(param.statusDiv).find('.status').hide().end().find('.status80').show();
       $(".easy_upload_percent").hide()
+      if ($('.test-over').is(":hidden")) {
+        handeldone();
+      }
     }
   }).fail(function (err) {
     toast('请求超时');
@@ -225,9 +279,15 @@ function checkProgress() {
           uploadFileId.remove(uploadFileId[i]);
         } else { //检测异常
           toast(res.resultMsg)
+          if ($('.test-over').is(":hidden")) {
+            handeldone();
+          }
         }
       }).fail(function (err) {
         toast(err.resultMsg)
+        if ($('.test-over').is(":hidden")) {
+          handeldone();
+        }
       })
     }
   }, 1400);

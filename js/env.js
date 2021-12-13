@@ -1,8 +1,7 @@
 
 // var url = 'http://90949.cn/web';  // 地址  
-// var downUrl = 'http://90949.cn:8180/';  // 测试  
+var downUrl = 'http://' + window.location.hostname + ':8180/';  // 测试  
 var url = 'http://172.16.43.49:8765/web';  // stable地址  
-var downUrl = 'http://172.16.43.49:8765:8180/';  // stable测试
 var token, tel;
 var timer;
 var timer1 = null;
