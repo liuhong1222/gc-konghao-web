@@ -28,7 +28,8 @@
 	background-image: url(../images/big3.jpg)
 }
 
-.accTwo-wrapper .web_bg_accTwo,.accTwoRwrapper .web_bg_accTwoResult {
+.accTwo-wrapper .web_bg_accTwo,
+.accTwoRwrapper .web_bg_accTwoResult {
 	background-image: url(../images/acctwo.jpg)
 }
 
@@ -43,7 +44,8 @@
 	background-image: url(../images/proocr.jpg)
 }
 
-.contentTabs,.facePro-advent {
+.contentTabs,
+.facePro-advent {
 	text-align: center
 }
 
@@ -73,8 +75,8 @@
 }
 
 .face-live-tabs .faceLive-con ul li:nth-child(2) {
-	width: 1px!important;
-	padding: 0!important;
+	width: 1px !important;
+	padding: 0 !important;
 	margin-left: 17px;
 	margin-right: 27px
 }
@@ -143,7 +145,10 @@
 	margin-bottom: 63px
 }
 
-.faceApply h2,.facePro-advent h2,.facePro-advent ul li h3,.facePro-advent ul li p {
+.faceApply h2,
+.facePro-advent h2,
+.facePro-advent ul li h3,
+.facePro-advent ul li p {
 	font-weight: 400;
 	color: #595f68
 }
@@ -182,7 +187,8 @@
 	text-align: left
 }
 
-.facePro-advent ul li:nth-child(3),.facePro-advent ul li:nth-child(6) {
+.facePro-advent ul li:nth-child(3),
+.facePro-advent ul li:nth-child(6) {
 	margin-right: 0
 }
 
@@ -190,8 +196,9 @@
 	text-align: center
 }
 
-.faceApply ul li div:nth-child(2),.proOCR>ul li {
-	box-shadow: 1px 2px 17px 4px rgba(224,233,245,.5)
+.faceApply ul li div:nth-child(2),
+.proOCR>ul li {
+	box-shadow: 1px 2px 17px 4px rgba(224, 233, 245, .5)
 }
 
 .faceApply h2 {
@@ -245,15 +252,18 @@
 	background-image: url(../images/proocr.jpg)
 }
 
-.faceLiveResult,.fourOcrResult {
+.faceLiveResult,
+.fourOcrResult {
 	background-color: #f1f1f1
 }
 
-.faceLiveResult .web_bg_accTwoResult,.fourOcrResult .web_bg_accTwoResult {
+.faceLiveResult .web_bg_accTwoResult,
+.fourOcrResult .web_bg_accTwoResult {
 	background-image: url(../images/faceBan.jpg)
 }
 
-.faceLiveResult .history-record,.fourOcrResult .history-record {
+.faceLiveResult .history-record,
+.fourOcrResult .history-record {
 	background-color: #fff;
 	margin-top: 30px;
 	padding: 20px 15px 0;
@@ -271,11 +281,13 @@
 	text-align: center
 }
 
-.faceLiveResult .history-record dl,.fourOcrResult .history-record dl {
+.faceLiveResult .history-record dl,
+.fourOcrResult .history-record dl {
 	border-bottom: 1px solid #eaeaea
 }
 
-.faceLiveResult .history-record .hisRecordList dl:hover,.fourOcrResult .history-record .hisRecordList dl:hover {
+.faceLiveResult .history-record .hisRecordList dl:hover,
+.fourOcrResult .history-record .hisRecordList dl:hover {
 	background-color: #f1f1f1
 }
 
@@ -314,7 +326,7 @@
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-175px ,-65px);
+	transform: translate(-175px, -65px);
 	z-index: 999;
 	display: none
 }
@@ -380,7 +392,7 @@
 	display: none;
 	width: 290px;
 	height: 7px;
-	background-image: linear-gradient(to right,#2674fe 0,#55a6ff 100%);
+	background-image: linear-gradient(to right, #2674fe 0, #55a6ff 100%);
 	position: absolute;
 	bottom: -1px;
 	right: -1px
@@ -416,7 +428,8 @@
 	margin: 28px 40px 28px auto
 }
 
-.proOCR .ident-con>ul li:nth-child(2),.proOCR .ident-con>ul li:nth-child(4) {
+.proOCR .ident-con>ul li:nth-child(2),
+.proOCR .ident-con>ul li:nth-child(4) {
 	margin-right: 0
 }
 
@@ -453,11 +466,13 @@
 	margin: 37px 28px 26px auto
 }
 
-.proOCR .bank-con,.proOCR .dirver-con {
+.proOCR .bank-con,
+.proOCR .dirver-con {
 	text-align: center
 }
 
-.proOCR .bank-con h2,.proOCR .dirver-con h2 {
+.proOCR .bank-con h2,
+.proOCR .dirver-con h2 {
 	font-size: 32px;
 	color: #595f68;
 	font-weight: 400;
@@ -465,38 +480,44 @@
 	margin-bottom: 15px
 }
 
-.proOCR .bank-con p,.proOCR .dirver-con p {
+.proOCR .bank-con p,
+.proOCR .dirver-con p {
 	color: #999;
 	letter-spacing: 2px
 }
 
-.proOCR .bank-con>ul li,.proOCR .dirver-con>ul li {
+.proOCR .bank-con>ul li,
+.proOCR .dirver-con>ul li {
 	display: inline-block;
 	margin-right: 132px;
 	margin-top: 70px
 }
 
-.proOCR .bank-con>ul li:last-child,.proOCR .dirver-con>ul li:last-child {
+.proOCR .bank-con>ul li:last-child,
+.proOCR .dirver-con>ul li:last-child {
 	margin-right: 0
 }
 
-.proOCR .bank-con>ul li h3,.proOCR .dirver-con>ul li h3 {
+.proOCR .bank-con>ul li h3,
+.proOCR .dirver-con>ul li h3 {
 	font-size: 24px;
 	font-weight: 400;
 	color: #595f68;
 	margin: 20px auto 10px
 }
 
-.proOCR .bank-con .user-sence,.proOCR .dirver-con .user-sence {
+.proOCR .bank-con .user-sence,
+.proOCR .dirver-con .user-sence {
 	height: 539px;
 	background-color: #f2f6f7;
 	overflow: hidden;
 	margin-top: 60px
 }
 
-.proOCR .bank-con .user-sence h2,.proOCR .dirver-con .user-sence h2 {
-	margin-top: 38px!important;
-	margin-bottom: 5px!important
+.proOCR .bank-con .user-sence h2,
+.proOCR .dirver-con .user-sence h2 {
+	margin-top: 38px !important;
+	margin-bottom: 5px !important
 }
 
 .proOCR .dirver-con .user-sence ul li {
@@ -635,7 +656,8 @@
 	margin-bottom: 62px
 }
 
-.proOCR .busine-con ul li:nth-child(3),.proOCR .busine-con ul li:nth-child(6) {
+.proOCR .busine-con ul li:nth-child(3),
+.proOCR .busine-con ul li:nth-child(6) {
 	margin-right: 0
 }
 
@@ -786,7 +808,8 @@
 	text-align: center
 }
 
-.faceLive-access,.immed-known {
+.faceLive-access,
+.immed-known {
 	width: 150px;
 	text-align: center;
 	cursor: pointer
@@ -796,14 +819,16 @@
 	top: 392px
 }
 
-.immed-accBtn:hover,.immed-test:hover,.immed-tests:hover {
+.immed-accBtn:hover,
+.immed-test:hover,
+.immed-tests:hover {
 	color: #223379;
 	background-color: #fff
 }
 
 .faceLive-access {
 	height: 35px;
-	background: linear-gradient(to right,#3a41ce 0,#fe08f9 100%);
+	background: linear-gradient(to right, #3a41ce 0, #fe08f9 100%);
 	line-height: 35px;
 	margin-left: -60px;
 	left: 50%;
@@ -812,7 +837,8 @@
 	font-size: 16px
 }
 
-.authOkCon,.waitAuthNotice {
+.authOkCon,
+.waitAuthNotice {
 	width: 700px;
 	height: 78px;
 	background-color: #eee;
@@ -844,7 +870,9 @@
 	color: #fff
 }
 
-.authErrorCon a,.authOkCon a,.waitAuthNotice a {
+.authErrorCon a,
+.authOkCon a,
+.waitAuthNotice a {
 	vertical-align: sub;
 	margin-right: 10px
 }
@@ -881,7 +909,7 @@
 }
 
 .authOk-Con form ul li {
-	margin-bottom: 9px!important
+	margin-bottom: 9px !important
 }
 
 .authOk-Con form ul li textarea {
@@ -893,10 +921,11 @@
 }
 
 .authOk-Con form ul li input {
-	border: 0!important
+	border: 0 !important
 }
 
-.swiper-container,.swiper-wrapper {
+.swiper-container,
+.swiper-wrapper {
 	width: 100%;
 	height: 530px
 }
@@ -981,7 +1010,8 @@
 	color: #233379
 }
 
-.eleResult .api-inter,.eleResult .basic-info {
+.eleResult .api-inter,
+.eleResult .basic-info {
 	/* width: 580px; */
 	width: 100%;
 	height: 220px;
@@ -993,7 +1023,8 @@
 	color: #585f68
 }
 
-.eleResult .api-inter .apiInfos,.eleResult .basic-info .basicInfos {
+.eleResult .api-inter .apiInfos,
+.eleResult .basic-info .basicInfos {
 	margin-top: 30px;
 	margin-left: 20px
 }
@@ -1014,10 +1045,11 @@
 	font-size: 12px
 }
 
-.eleResult .api-inter #api-duibtn,.eleResult .basic-info #basic-rechargeBtn {
+.eleResult .api-inter #api-duibtn,
+.eleResult .basic-info #basic-rechargeBtn {
 	height: 30px;
 	color: #fff;
-	box-shadow: rgba(0,0,0,.2) 0 1px 4px;
+	box-shadow: rgba(0, 0, 0, .2) 0 1px 4px;
 	padding-left: 22px;
 	background-repeat: no-repeat
 }
@@ -1036,8 +1068,9 @@
 	background-position: 8px
 }
 
-.pro-advant li,.proAdvant-operation ul li {
-	box-shadow: 1px 2px 17px 4px rgba(198,219,250,.5);
+.pro-advant li,
+.proAdvant-operation ul li {
+	box-shadow: 1px 2px 17px 4px rgba(198, 219, 250, .5);
 	float: left
 }
 
@@ -1215,7 +1248,8 @@
 	background-image: url(../images/dian.png)
 }
 
-.ApiResult-wrapper .web_bg_emapiResult,.emptyAPI-wrapper .web_bg_emptyapi {
+.ApiResult-wrapper .web_bg_emapiResult,
+.emptyAPI-wrapper .web_bg_emptyapi {
 	background-image: url(../images/emptyAPI.jpg)
 }
 
@@ -1260,7 +1294,13 @@
 	border: 1px solid #080F2B
 }
 
-.ApiResult-wrapper .fold-line,.accTwoRwrapper .fold-line,.faceLiveResult .fold-line,.fourOcrResult .fold-line,.idVerResult-wrapper .fold-line,.realQuResult-wrapper .fold-line,.textRecord-wrapper .fold-line {
+.ApiResult-wrapper .fold-line,
+.accTwoRwrapper .fold-line,
+.faceLiveResult .fold-line,
+.fourOcrResult .fold-line,
+.idVerResult-wrapper .fold-line,
+.realQuResult-wrapper .fold-line,
+.textRecord-wrapper .fold-line {
 	height: 585px;
 	background-color: #fff;
 	padding: 25px;
@@ -1276,7 +1316,8 @@
 	position: relative
 }
 
-.ApiResult-wrapper .history-record .hisRecordList dl:hover,.helpCenter-wrapper {
+.ApiResult-wrapper .history-record .hisRecordList dl:hover,
+.helpCenter-wrapper {
 	background-color: #f1f1f1
 }
 
@@ -1461,7 +1502,8 @@
 	font-size: 18px
 }
 
-.nav .entry,.prelight {
+.nav .entry,
+.prelight {
 	color: #fff
 }
 
@@ -1469,7 +1511,10 @@
 	background: #00f
 }
 
-.box_img .items .item,.nav .logo,.useFace .icons ul li,section .pro-btn div {
+.box_img .items .item,
+.nav .logo,
+.useFace .icons ul li,
+section .pro-btn div {
 	background-repeat: no-repeat
 }
 
@@ -1584,7 +1629,7 @@ section .pro-btn>div>a.seller-login .inerval-line {
 	display: none;
 	width: 180px;
 	margin: 0 auto;
-	border-bottom: 1px solid rgba(255,255,255,.12);
+	border-bottom: 1px solid rgba(255, 255, 255, .12);
 	position: relative;
 	height: 0;
 	z-index: 2
@@ -1618,7 +1663,8 @@ section .pro-btn>div>a.seller-login-face:hover {
 	margin-top: -25px
 }
 
-section .pro-btn>div>a.seller-login:hover .inerval-line,section .pro-btn>div>a.seller-login:hover .seller-entry {
+section .pro-btn>div>a.seller-login:hover .inerval-line,
+section .pro-btn>div>a.seller-login:hover .seller-entry {
 	display: block
 }
 
@@ -1764,7 +1810,8 @@ footer>div p {
 	background-image: url(../images/nullcode.jpg)
 }
 
-.opEleResult-wrapper .web_bg_OPresult,.operatorsEle-wrapper .web_bg_opera {
+.opEleResult-wrapper .web_bg_OPresult,
+.operatorsEle-wrapper .web_bg_opera {
 	background-image: url(../images/opratBnaner.jpg)
 }
 
@@ -1845,7 +1892,10 @@ footer>div p {
 	color: #252A3D;
 }
 
-.perCenter-wrapper .basic-dataCenter ul li>div p span.editBtn,.perCenter-wrapper .editPassWord,.perCenter-wrapper .editAccMobile,.perCenter-wrapper .editloginPwd {
+.perCenter-wrapper .basic-dataCenter ul li>div p span.editBtn,
+.perCenter-wrapper .editPassWord,
+.perCenter-wrapper .editAccMobile,
+.perCenter-wrapper .editloginPwd {
 	font-size: 12px;
 	font-family: PingFangSC-Regular, PingFang SC;
 	font-weight: 400;
@@ -1864,7 +1914,9 @@ footer>div p {
 	color: #fff;
 }
 
-.perCenter-wrapper .basic-dataCenter ul li>div p span.editBtn:hover,.perCenter-wrapper .cancelPwd:hover,.perCenter-wrapper .editPassWord:hover {
+.perCenter-wrapper .basic-dataCenter ul li>div p span.editBtn:hover,
+.perCenter-wrapper .cancelPwd:hover,
+.perCenter-wrapper .editPassWord:hover {
 	background-color: #4985fc;
 	color: #fff
 }
@@ -1887,7 +1939,8 @@ footer>div p {
 	display: none
 }
 
-#resultPwd,#phoneAccOpera {
+#resultPwd,
+#phoneAccOpera {
 	margin-left: 15px;
 	width: 250px;
 	color: #666
@@ -2087,7 +2140,7 @@ footer>div p {
 	margin-right: 20px;
 	margin-top: 30px;
 	background-color: #fff;
-	box-shadow: 1px 2px 17px 4px rgba(223,230,239,.5)
+	box-shadow: 1px 2px 17px 4px rgba(223, 230, 239, .5)
 }
 
 .proAll-wrapper .proAlls ul li div {
@@ -2107,7 +2160,10 @@ footer>div p {
 	color: #a7abb0
 }
 
-.emptyPro-wrapper .nullCodePro ul li,.identityPro-wrapper .nullCodePro ul li,.proAll-wrapper .proAlls ul li,.questions ul li h3 {
+.emptyPro-wrapper .nullCodePro ul li,
+.identityPro-wrapper .nullCodePro ul li,
+.proAll-wrapper .proAlls ul li,
+.questions ul li h3 {
 	transition: All .4s ease-in-out;
 	-webkit-transition: All .4s ease-in-out;
 	-moz-transition: All .4s ease-in-out;
@@ -2116,20 +2172,22 @@ footer>div p {
 
 .questions ul li h3:hover {
 	cursor: pointer;
-	transform: translate(0,-8px);
-	-webkit-transform: translate(0,-8px);
-	-moz-transform: translate(0,-8px);
-	-o-transform: translate(0,-8px);
-	-ms-transform: translate(0,-8px)
+	transform: translate(0, -8px);
+	-webkit-transform: translate(0, -8px);
+	-moz-transform: translate(0, -8px);
+	-o-transform: translate(0, -8px);
+	-ms-transform: translate(0, -8px)
 }
 
-.pro-advant li:hover,.proAdvant-operation ul li:hover,.proAll-wrapper .proAlls ul li:hover {
+.pro-advant li:hover,
+.proAdvant-operation ul li:hover,
+.proAll-wrapper .proAlls ul li:hover {
 	cursor: pointer;
-	transform: translate(0,-5px);
-	-webkit-transform: translate(0,-5px);
-	-moz-transform: translate(0,-5px);
-	-o-transform: translate(0,-5px);
-	-ms-transform: translate(0,-5px);
+	transform: translate(0, -5px);
+	-webkit-transform: translate(0, -5px);
+	-moz-transform: translate(0, -5px);
+	-o-transform: translate(0, -5px);
+	-ms-transform: translate(0, -5px);
 	-webkit-box-shadow: 0 5px 15px #e5e5e5;
 	-moz-box-shadow: 0 5px 15px #e5e5e5;
 	box-shadow: 0 5px 15px #e5e5e5
@@ -2217,7 +2275,8 @@ footer>div p {
 	position: relative
 }
 
-.realQuResult-wrapper .history-record .hisRecordList dl:hover,.textRecord-wrapper {
+.realQuResult-wrapper .history-record .hisRecordList dl:hover,
+.textRecord-wrapper {
 	background-color: #f1f1f1
 }
 
@@ -2256,35 +2315,34 @@ footer>div p {
 
 .wrapper .textRecord-bg .textRecord-bg-text {
 	position: absolute;
-	top: 160px;
-	right: 160px;
+	top: 50%;
+	right: 15%;
+	margin-top: -54px;
 }
 
 .wrapper .textRecord-bg .textRecord-bg-text h2 {
-	height: 92px;
-	font-size: 66px;
+	font-size: 40px;
 	font-family: PingFangSC-Regular, PingFang SC;
 	font-weight: 400;
 	color: #FFFFFF;
-	line-height: 92px;
 }
 
 .wrapper .textRecord-bg .textRecord-bg-text p {
 	height: 33px;
-	font-size: 24px;
+	font-size: 16px;
 	font-family: PingFangSC-Regular, PingFang SC;
 	font-weight: 400;
 	color: #FFFFFF;
 	line-height: 33px;
-	margin: 20px 0 40px 0;
+	margin: 8px 0 15px 0;
 }
 
 .wrapper .textRecord-bg .textRecord-bg-text button {
-	width: 120px;
-	height: 40px;
+	width: 115px;
+	height: 36px;
 	border-radius: 4px;
 	border: 1px solid #FFFFFF;
-	background: rgb(0,0,0,0);
+	background: rgb(0, 0, 0, 0);
 }
 
 .wrapper .textRecord-bg .textRecord-bg-text button a {
@@ -2428,14 +2486,16 @@ footer>div p {
 	box-shadow: 3px -2px 3px #f3f3f3
 }
 
-.textRecord-wrapper .result-box .box1,.textRecord-wrapper .result-box .box3 {
+.textRecord-wrapper .result-box .box1,
+.textRecord-wrapper .result-box .box3 {
 	left: 197px;
 	top: 1px;
 	width: 90px;
 	height: 35px
 }
 
-.textRecord-wrapper .result-box .box1:after,.textRecord-wrapper .result-box .box3:after {
+.textRecord-wrapper .result-box .box1:after,
+.textRecord-wrapper .result-box .box3:after {
 	top: 10px
 }
 
@@ -2507,7 +2567,10 @@ footer>div p {
 	line-height: 60px
 }
 
-.textRecord-wrapper .history-record .hisRecordList dl dd:nth-child(2),.textRecord-wrapper .history-record .hisRecordList dl dd:nth-child(4),.textRecord-wrapper .history-record .hisRecordTitle dl dt:nth-child(2),.textRecord-wrapper .history-record .hisRecordTitle dl dt:nth-child(4) {
+.textRecord-wrapper .history-record .hisRecordList dl dd:nth-child(2),
+.textRecord-wrapper .history-record .hisRecordList dl dd:nth-child(4),
+.textRecord-wrapper .history-record .hisRecordTitle dl dt:nth-child(2),
+.textRecord-wrapper .history-record .hisRecordTitle dl dt:nth-child(4) {
 	width: 14.1%
 }
 
@@ -2536,8 +2599,8 @@ footer>div p {
 }
 
 .textRecord-wrapper .history-record .checkClass {
-	width: 6%!important;
-	text-align: left!important
+	width: 6% !important;
+	text-align: left !important
 }
 
 .textRecord-wrapper .history-record .hisRecordList dl dd.zipImg {
@@ -2659,7 +2722,7 @@ footer>div p {
 	width: 120px;
 	color: #666;
 	background-color: #fff;
-	box-shadow: 1px 2px 17px 4px rgba(223,230,239,.5);
+	box-shadow: 1px 2px 17px 4px rgba(223, 230, 239, .5);
 	text-align: center;
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px
@@ -2757,7 +2820,7 @@ footer#footerINDEX #indexFooter div {
 	left: 50%;
 	top: 30%;
 	background: url(../images/index_title.png) center center no-repeat;
-	transform: translate(-271px,0)
+	transform: translate(-271px, 0)
 }
 
 .empty-wrapper .file-box {
@@ -2804,7 +2867,8 @@ footer#footerINDEX #indexFooter div {
 	font-size: 12px
 }
 
-.empty-wrapper .file-box #sendBtn,.empty-wrapper .file-box #test {
+.empty-wrapper .file-box #sendBtn,
+.empty-wrapper .file-box #test {
 	position: absolute;
 	left: 280px;
 	top: 167px;
@@ -2870,7 +2934,7 @@ footer#footerINDEX #indexFooter div {
 	margin: 0 auto;
 	width: 146px;
 	height: 148px;
-	background-color: rgba(17,62,169,.4);
+	background-color: rgba(17, 62, 169, .4);
 	background-image: url(../images/water.png);
 	background-repeat: repeat-x;
 	background-position-y: 138px;
@@ -3006,7 +3070,8 @@ footer#footerINDEX #indexFooter div {
 	border-radius: 50%
 }
 
-.empty-wrapper #doneBox,.empty-wrapper #noBalance {
+.empty-wrapper #doneBox,
+.empty-wrapper #noBalance {
 	margin-left: -214px;
 	border: 1px solid #273b87;
 	display: none;
@@ -3074,7 +3139,8 @@ footer#footerINDEX #indexFooter div {
 	color: #cbe1fa
 }
 
-.empty-wrapper #noBalance button a,.empty-wrapper #testing span {
+.empty-wrapper #noBalance button a,
+.empty-wrapper #testing span {
 	color: #fff
 }
 
@@ -3191,7 +3257,8 @@ footer#footerINDEX #indexFooter div {
 	font-size: 12px
 }
 
-.accInfo-wrapper .pro-box .tabs li a,.accInfo-wrapper .pro-box p {
+.accInfo-wrapper .pro-box .tabs li a,
+.accInfo-wrapper .pro-box p {
 	color: #585f68
 }
 
@@ -3202,7 +3269,7 @@ footer#footerINDEX #indexFooter div {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0, 0, 0, .7);
 	z-index: 10
 }
 
@@ -3272,7 +3339,8 @@ footer#footerINDEX #indexFooter div {
 	color: #666
 }
 
-.accInfo-wrapper .tab_container .tab_content ul li.active,.accInfo-wrapper .tab_container .tab_content ul li.active .package {
+.accInfo-wrapper .tab_container .tab_content ul li.active,
+.accInfo-wrapper .tab_container .tab_content ul li.active .package {
 	border-color: #f3bb02
 }
 
@@ -3364,7 +3432,7 @@ footer#footerINDEX #indexFooter div {
 	min-height: 325px;
 }
 
-.accInfo-wrapper .pay-box > p {
+.accInfo-wrapper .pay-box>p {
 	font-weight: 500;
 	color: #252A3D;
 	/* height: 28px;
@@ -3442,16 +3510,19 @@ footer#footerINDEX #indexFooter div {
 	margin-bottom: 50px
 }
 
-.perAuth-wrapper .perAuth-info .bread-nav,.perAuth-wrapper .perAuth-info .bread-nav a {
+.perAuth-wrapper .perAuth-info .bread-nav,
+.perAuth-wrapper .perAuth-info .bread-nav a {
 	color: #585f68
 }
 
-.perAuth-info .enterprise-bar,.perAuth-info .progress-bar {
+.perAuth-info .enterprise-bar,
+.perAuth-info .progress-bar {
 	width: 703px;
 	margin: 40px auto 20px
 }
 
-.perAuth-info .enterprise-bar span,.perAuth-info .progress-bar span {
+.perAuth-info .enterprise-bar span,
+.perAuth-info .progress-bar span {
 	float: left;
 	width: 234px;
 	height: 44px;
@@ -3461,11 +3532,13 @@ footer#footerINDEX #indexFooter div {
 	color: #fff
 }
 
-.perAuth-info .enterprise-bar span.active,.perAuth-info .progress-bar span.active {
+.perAuth-info .enterprise-bar span.active,
+.perAuth-info .progress-bar span.active {
 	background-color: #1673ff
 }
 
-.perAuth-wrapper .perAuth-info .auth-Details,.perAuth-wrapper .perAuth-info .enterprise-Detailsa {
+.perAuth-wrapper .perAuth-info .auth-Details,
+.perAuth-wrapper .perAuth-info .enterprise-Detailsa {
 	padding-bottom: 50px;
 	padding-top: 26px;
 	background-color: #fff;
@@ -3576,7 +3649,8 @@ footer#footerINDEX #indexFooter div {
 	margin-bottom: 20px
 }
 
-#onLine-detection,#onLine-detection>div>p {
+#onLine-detection,
+#onLine-detection>div>p {
 	margin-bottom: 27px
 }
 
@@ -3604,16 +3678,16 @@ footer#footerINDEX #indexFooter div {
 
 .perAuth-wrapper .perAuth-info form ul li span:last-child {
 	margin-left: 10px;
-	color: red!important;
+	color: red !important;
 	display: none
 }
 
 .tipsShow {
-	display: inline-block!important
+	display: inline-block !important
 }
 
 .inpRed {
-	border: 1px solid red!important
+	border: 1px solid red !important
 }
 
 .authHide {
@@ -3624,7 +3698,8 @@ footer#footerINDEX #indexFooter div {
 	display: block
 }
 
-.auth-Details,.enterprise-Detailsa {
+.auth-Details,
+.enterprise-Detailsa {
 	position: relative
 }
 
@@ -3648,7 +3723,7 @@ footer#footerINDEX #indexFooter div {
 	text-align: center;
 	color: #585f68;
 	font-weight: 700;
-	margin-top: -5px!important
+	margin-top: -5px !important
 }
 
 #onLine-detection {
@@ -3756,13 +3831,13 @@ footer#footerINDEX #indexFooter div {
 }
 
 .debug-info-show .returnCon::-webkit-scrollbar-thumb {
-	-webkit-box-shadow: inset 0 0 5px rgba(73,72,72,.2);
-	background: rgba(73,72,72,.2)
+	-webkit-box-shadow: inset 0 0 5px rgba(73, 72, 72, .2);
+	background: rgba(73, 72, 72, .2)
 }
 
 .debug-info-show .returnCon::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 5px rgba(36,35,35,.1);
-	background: rgba(36,35,35,.1)
+	-webkit-box-shadow: inset 0 0 5px rgba(36, 35, 35, .1);
+	background: rgba(36, 35, 35, .1)
 }
 
 .news-wrapper {
@@ -3777,7 +3852,8 @@ footer#footerINDEX #indexFooter div {
 	margin-bottom: 10px
 }
 
-.news-wrapper .new-list,.news-wrapper .newDetails {
+.news-wrapper .new-list,
+.news-wrapper .newDetails {
 	flex: 1;
 	padding: 25px 32px 25px 26px;
 	box-sizing: border-box;
@@ -3790,7 +3866,8 @@ footer#footerINDEX #indexFooter div {
 	min-height: 570px;
 }
 
-.news-wrapper .new-list h3,.news-wrapper .newDetails h3 {
+.news-wrapper .new-list h3,
+.news-wrapper .newDetails h3 {
 	font-size: 14px;
 	color: #585f68;
 	font-weight: 700
@@ -3896,8 +3973,9 @@ select {
 	margin-top: -6px
 }
 
-input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
-	-webkit-appearance: none!important;
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+	-webkit-appearance: none !important;
 	margin: 0
 }
 
@@ -3918,7 +3996,8 @@ input[type=number] {
 	color: #84899f
 }
 
-#downExcel,.echartsBtn button:hover {
+#downExcel,
+.echartsBtn button:hover {
 	background: #3A72FF;
 	border-radius: 4px;
 	color: #fff
@@ -3939,13 +4018,26 @@ input[type=number] {
 	display: none
 }
 
-#auth-mask,.bindEmails,.cancelPwdMask,.reBindPhone,.setCompressPwd,.updatePwd ,.setLoginPwd,.updateLoginPwd{
+#auth-mask,
+.bindEmails,
+.cancelPwdMask,
+.reBindPhone,
+.setCompressPwd,
+.updatePwd,
+.setLoginPwd,
+.updateLoginPwd {
 	text-align: center;
 	left: 50%;
 	box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.08) !important;
 }
 
-.bindEmails,.cancelPwdMask,.reBindPhone,.setCompressPwd,.updatePwd ,.setLoginPwd,.updateLoginPwd{
+.bindEmails,
+.cancelPwdMask,
+.reBindPhone,
+.setCompressPwd,
+.updatePwd,
+.setLoginPwd,
+.updateLoginPwd {
 	border-radius: 5px;
 	padding: 30px;
 	z-index: 101
@@ -3956,7 +4048,7 @@ input[type=number] {
 	background-color: #fff;
 	position: absolute;
 	top: 50%;
-	transform: translate(-220px,210px);
+	transform: translate(-220px, 210px);
 	border-radius: 20px;
 	display: none
 }
@@ -3968,7 +4060,10 @@ input[type=number] {
 	margin-top: 30px;
 }
 
-.reBindPhone ul li .red-icon, .emailInput label .red-icon, .setLoginPwd .input-wrap label .red-icon, .updateLoginPwd .input-wrap label .red-icon {
+.reBindPhone ul li .red-icon,
+.emailInput label .red-icon,
+.setLoginPwd .input-wrap label .red-icon,
+.updateLoginPwd .input-wrap label .red-icon {
 	height: 25px;
 	font-size: 18px;
 	font-family: PingFangSC-Regular, PingFang SC;
@@ -3977,11 +4072,17 @@ input[type=number] {
 	line-height: 25px;
 }
 
-.reBindPhone ul li > div {
+.reBindPhone ul li>div {
 	text-align: left;
 }
 
-.closeBindCompressPwd,.closecancelPwdMask,.closephoneEmail,.closetwoTrueBtn,.closeupdatePwd ,.closesetLoginPwd,.closesetLoginTwoPwd {
+.closeBindCompressPwd,
+.closecancelPwdMask,
+.closephoneEmail,
+.closetwoTrueBtn,
+.closeupdatePwd,
+.closesetLoginPwd,
+.closesetLoginTwoPwd {
 	width: 16px;
 	height: 16px;
 	position: absolute;
@@ -3989,6 +4090,7 @@ input[type=number] {
 	top: 15px;
 	cursor: pointer
 }
+
 .twoTrueBtn {
 	width: 600px;
 	height: 305px;
@@ -3996,7 +4098,7 @@ input[type=number] {
 	top: 50%;
 	left: 50%;
 	padding: 50px;
-	transform: translate(-300px,-50px);
+	transform: translate(-300px, -50px);
 	background: #fff;
 	z-index: 200;
 	display: none
@@ -4027,7 +4129,13 @@ input[type=number] {
 	background-color: #1673ff
 }
 
-.bindEmails h3,.cancelPwdMask h3,.reBindPhone h3,.setCompressPwd h3,.updatePwd h3 ,.setLoginPwd h3,.updateLoginPwd h3{
+.bindEmails h3,
+.cancelPwdMask h3,
+.reBindPhone h3,
+.setCompressPwd h3,
+.updatePwd h3,
+.setLoginPwd h3,
+.updateLoginPwd h3 {
 	font-size: 18px;
 	font-family: PingFangSC-Semibold, PingFang SC;
 	font-weight: 600;
@@ -4066,11 +4174,13 @@ input[type=number] {
 	padding-left: 5px;
 }
 
-#update-perfect,.updatePwd .updatePwdInp {
+#update-perfect,
+.updatePwd .updatePwdInp {
 	margin-top: 25px
 }
 
-.reBindPhone ul li input.newCode,.reBindPhone ul li input.oldCode {
+.reBindPhone ul li input.newCode,
+.reBindPhone ul li input.oldCode {
 	width: 128px
 }
 
@@ -4106,7 +4216,11 @@ input[type=number] {
 	display: none
 }
 
-#cancelPwdMaskBtn,.bindEmails #email-perfect,.reBindPhone form #immedia-perfect,.setCompressPwd #compressPwd-perfect,.updatePwd {
+#cancelPwdMaskBtn,
+.bindEmails #email-perfect,
+.reBindPhone form #immedia-perfect,
+.setCompressPwd #compressPwd-perfect,
+.updatePwd {
 	color: #fff;
 	text-align: center;
 	line-height: 36px;
@@ -4129,46 +4243,67 @@ input[type=number] {
 	background-color: #ccc
 }
 
-#auth-mask,#auth-mask button,.bindEmails,.cancelPwdMask,.setCompressPwd,.updatePwd,.setLoginPwd,.updateLoginPwd {
+#auth-mask,
+#auth-mask button,
+.bindEmails,
+.cancelPwdMask,
+.setCompressPwd,
+.updatePwd,
+.setLoginPwd,
+.updateLoginPwd {
 	-webkit-box-shadow: 1px 1px 10px 1px #ccc;
 	background-color: #fff
 }
 
 .contrastNo {
-	color: #3A7CFF!important;
+	color: #3A7CFF !important;
 	cursor: pointer
 }
 
-.bindEmails,.cancelPwdMask,.setCompressPwd,.updatePwd {
+.bindEmails,
+.cancelPwdMask,
+.setCompressPwd,
+.updatePwd {
 	display: none;
 	width: 440px;
 	position: absolute;
 	top: 50%;
-	transform: translate(-220px,215px);
+	transform: translate(-220px, 215px);
 	color: #999;
 	display: none;
 	border-radius: 20px;
 	padding: 30px;
 }
+
 .bindEmails {
-	transform: translate(-220px,215px);
+	transform: translate(-220px, 215px);
 }
-.setLoginPwd  h3,.updateLoginPwd  h3 {
+
+.setLoginPwd h3,
+.updateLoginPwd h3 {
 	margin-bottom: 30px
 }
-.setLoginPwd div,.updateLoginPwd div {
+
+.setLoginPwd div,
+.updateLoginPwd div {
 	/* height: 63px; */
 }
-.setLoginPwd div p,.updateLoginPwd div p  {
+
+.setLoginPwd div p,
+.updateLoginPwd div p {
 	text-align: left;
 	color: red;
 }
-.setLoginPwd input,.updateLoginPwd input  {
+
+.setLoginPwd input,
+.updateLoginPwd input {
 	width: 330px;
 	height: 33px;
-    border: 1px solid #d2d2d2;
+	border: 1px solid #d2d2d2;
 }
-.setLoginPwd #setLoginPwdBtn,.updateLoginPwd #setLoginTwoPwdBtn {
+
+.setLoginPwd #setLoginPwdBtn,
+.updateLoginPwd #setLoginTwoPwdBtn {
 	cursor: pointer;
 	width: 80px;
 	height: 40px;
@@ -4179,12 +4314,14 @@ input[type=number] {
 	font-weight: 600;
 	color: #FFFFFF;
 }
-.setLoginPwd,.updateLoginPwd{
+
+.setLoginPwd,
+.updateLoginPwd {
 	width: 440px;
 	/* height: 205px; */
 	position: absolute;
 	top: 50%;
-	transform: translate(-208px,220px);
+	transform: translate(-208px, 220px);
 	color: #2A3047;
 	border-radius: 20px;
 	padding: 30px;
@@ -4245,7 +4382,7 @@ input[type=number] {
 	width: 600px;
 	height: 472px;
 	padding: 25px;
-	transform: translate(-300px,-50px)
+	transform: translate(-300px, -50px)
 }
 
 .updatePwd .updatePwdInp span {
@@ -4254,11 +4391,12 @@ input[type=number] {
 	text-align: right
 }
 
-.cancelPwdMask,.setCompressPwd {
+.cancelPwdMask,
+.setCompressPwd {
 	width: 600px;
 	height: 237px;
 	padding: 50px;
-	transform: translate(-300px,-50px)
+	transform: translate(-300px, -50px)
 }
 
 .cancelPwdMask p {
@@ -4278,7 +4416,8 @@ input[type=number] {
 	text-align: left
 }
 
-.bindEmails div.emailInput,.setCompressPwd div.compressInput {
+.bindEmails div.emailInput,
+.setCompressPwd div.compressInput {
 	margin-top: 35px
 }
 
@@ -4292,7 +4431,9 @@ input[type=number] {
 	line-height: 25px;
 }
 
-.bindEmails input,.setCompressPwd input,.updatePwd input{
+.bindEmails input,
+.setCompressPwd input,
+.updatePwd input {
 	width: 242px;
 	height: 40px;
 	line-height: 40px;
@@ -4301,7 +4442,9 @@ input[type=number] {
 	padding-left: 5px;
 }
 
-.bindEmails #email-perfect,.setCompressPwd #compressPwd-perfect,.updatePwd #update-perfect {
+.bindEmails #email-perfect,
+.setCompressPwd #compressPwd-perfect,
+.updatePwd #update-perfect {
 	margin-top: 40px
 }
 
@@ -4312,22 +4455,25 @@ input[type=number] {
 	top: 8px;
 	right: 11px;
 	color: #aaa;
-	text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+	text-shadow: 0 -1px 1px rbga(0, 0, 0, .6);
 	font-weight: 700;
 	cursor: pointer
 }
 
-#auth-mask,#mask,#maskReg {
+#auth-mask,
+#mask,
+#maskReg {
 	position: fixed;
 	display: none
 }
 
-#mask,#maskReg {
+#mask,
+#maskReg {
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,.4);
+	background-color: rgba(0, 0, 0, .4);
 	z-index: 10
 }
 
@@ -4338,7 +4484,7 @@ input[type=number] {
 	padding: 18px 18px 25px 29px;
 	top: 50%;
 	z-index: 9999;
-	transform: translate(-208px,-89.5px)
+	transform: translate(-208px, -89.5px)
 }
 
 #auth-mask a {
@@ -4723,18 +4869,21 @@ center {
 	color: #3a7cff
 }
 
-.busincoop-wrapper .weadvant ul li,.three-models ul li {
+.busincoop-wrapper .weadvant ul li,
+.three-models ul li {
 	float: left;
 	width: 33.3%;
 	padding: 60px 87px;
 	box-sizing: border-box
 }
 
-.busincoop-wrapper .weadvant ul li p,.three-models ul li p {
+.busincoop-wrapper .weadvant ul li p,
+.three-models ul li p {
 	line-height: 20px
 }
 
-.busincoop-wrapper .weadvant ul li h3,.three-models ul li h3 {
+.busincoop-wrapper .weadvant ul li h3,
+.three-models ul li h3 {
 	font-size: 18px;
 	color: #0b142f;
 	margin: 25px 0
@@ -4743,19 +4892,20 @@ center {
 .busincoop-wrapper .Sales-data-sheet .Sales-data-img {
 	height: 543px;
 	display: block;
-	box-shadow: 0 10px 27px 0 rgba(100,123,176,.23);
+	box-shadow: 0 10px 27px 0 rgba(100, 123, 176, .23);
 	margin-top: 45px;
 	margin-bottom: 120px
 }
 
-.busincoop-wrapper .agentpartner ul li,.busincoop-wrapper .customer-case ul li {
+.busincoop-wrapper .agentpartner ul li,
+.busincoop-wrapper .customer-case ul li {
 	float: left;
 	width: 25%;
 	margin-top: 60px
 }
 
 .busincoop-wrapper .agentpartner {
-	box-shadow: 0 10px 27px 0 rgba(100,123,176,.23);
+	box-shadow: 0 10px 27px 0 rgba(100, 123, 176, .23);
 	padding-bottom: 50px;
 	overflow: hidden;
 	box-sizing: border-box
@@ -4799,7 +4949,7 @@ center {
 	width: 806px;
 	padding: 30px 121px 30px 106px;
 	background-color: #fff;
-	box-shadow: 0 10px 27px 0 rgba(100,123,176,.23);
+	box-shadow: 0 10px 27px 0 rgba(100, 123, 176, .23);
 	position: relative
 }
 
@@ -4844,7 +4994,7 @@ center {
 	display: block;
 	width: 162px;
 	height: 162px;
-	box-shadow: 0 5px 24px 0 rgba(58,75,205,.1);
+	box-shadow: 0 5px 24px 0 rgba(58, 75, 205, .1);
 	margin-top: 25px;
 	box-sizing: border-box
 }
@@ -4897,7 +5047,7 @@ center {
 .readFileWait {
 	width: 200px;
 	height: 50px;
-	background-color: rgba(9,16,44,.9);
+	background-color: rgba(9, 16, 44, .9);
 	box-shadow: 0 0 5px #273b87;
 	line-height: 50px;
 	color: #fff;
@@ -4905,66 +5055,65 @@ center {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-100px,-25px);
+	transform: translate(-100px, -25px);
 	display: none;
 	z-index: 999
 }
 
-#checkRulesList{
+#checkRulesList {
 	width: 250px;
 	position: relative;
 	left: 420px;
 	top: -74px;
 	background-color: #fff;
-	border:1px solid #ccc;
+	border: 1px solid #ccc;
 	padding-top: 10px;
 	height: 135px;
 }
+
 #checkRulesList>span {
 	font-weight: 700;
 }
+
 #checkRulesList ul {
 	text-align: left;
 }
+
 #checkRulesList ul li {
 	line-height: 25px;
 }
-div.rules-list 
-{
-margin-top:10px;    
+
+div.rules-list {
+	margin-top: 10px;
 }
 
-div.rules-list .rules
-{
-list-style-type:none;
-padding:0;
+div.rules-list .rules {
+	list-style-type: none;
+	padding: 0;
 }
 
-div.rules-list li
-{
-position:relative;
+div.rules-list li {
+	position: relative;
 }
 
-div.rules-list li.ko::before
-{
-content:'\f00d';
-font: normal normal normal 14px/1 FontAwesome;
-width: 32px;
-font-size: 14px;
-display: inline-block;
-text-align: right;
-margin-right: 10px;
-color:#F00;
+div.rules-list li.ko::before {
+	content: '\f00d';
+	font: normal normal normal 14px/1 FontAwesome;
+	width: 32px;
+	font-size: 14px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 10px;
+	color: #F00;
 }
-div.rules-list li.ok::before
-{
-content:'\f00c';
-font: normal normal normal 14px/1 FontAwesome;
-width: 32px;
-font-size: 14px;
-display: inline-block;
-text-align: right;
-margin-right: 10px;
-color:#008000;
+
+div.rules-list li.ok::before {
+	content: '\f00c';
+	font: normal normal normal 14px/1 FontAwesome;
+	width: 32px;
+	font-size: 14px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 10px;
+	color: #008000;
 }
- 

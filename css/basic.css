@@ -1165,8 +1165,8 @@ iframe {
 }
 
 .aside-wrapper .nav-list .nav-switch {
-    height: 48px;
-    line-height: 48px;
+    height: 60px;
+    line-height: 60px;
     cursor: pointer;
 }
 
@@ -1180,8 +1180,8 @@ iframe {
 
 .aside-wrapper .nav-list li {
     width: 100%;
-    height: 48px;
-    line-height: 48px;
+    height: 60px;
+    line-height: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -1219,8 +1219,8 @@ iframe {
     /* right: 0; */
     /* left: 0;
     z-index: 1030; */
-    height: 100px;
-    line-height: 100px;
+    height: 130px;
+    line-height: 130px;
     /* box-shadow: 0 2px 4px rgb(0 0 0 / 8%); */
     /* background-color: #252b3d; */
     /* background: rgba(0, 0, 0, 0.8); */
