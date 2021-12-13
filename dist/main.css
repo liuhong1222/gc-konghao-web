@@ -4048,7 +4048,7 @@ input[type=number] {
 	background-color: #fff;
 	position: absolute;
 	top: 50%;
-	transform: translate(-220px, 210px);
+	transform: translate(-220px, -210px);
 	border-radius: 20px;
 	display: none
 }
@@ -4276,7 +4276,7 @@ input[type=number] {
 }
 
 .bindEmails {
-	transform: translate(-220px, 215px);
+	transform: translate(-220px, -120px);
 }
 
 .setLoginPwd h3,
@@ -4321,7 +4321,7 @@ input[type=number] {
 	/* height: 205px; */
 	position: absolute;
 	top: 50%;
-	transform: translate(-208px, 220px);
+	transform: translate(-208px, -185px);
 	color: #2A3047;
 	border-radius: 20px;
 	padding: 30px;
