@@ -40,13 +40,17 @@ $('#easyContainer').easyUpload({
 </div>`,//文件上传说明
   showPreview: true,
   url: url + '/file/upload',
+  isUploadChunk: true, // 是否为分片上传
+  chunkUploadUrl: url + '/file/chunkUpload', // 分片上传接口 URL
+  uploadStatusUrl: url + '/file/uploadStatus', // 分片上传状态接口 URL
+  uploadingCode: 5205, // 正在上传中 code
   fileName: 'file',
   formParam: {
     token: sessionStorage.getItem('token'),
     mobile: sessionStorage.getItem('id')
   },
   timeout: 30000,
-  okCode: 000000,
+  okCode: '000000',
   successFunc: function (res) {
     var param = _findEle(res.easyFileIndex, res.target);
     if (res.resultCode = '000000') {

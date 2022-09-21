@@ -2,7 +2,7 @@
 var url = 'http://90949.cn/web';  // 线上地址  
 var downUrl = 'http://' + window.location.hostname + ':8180/';  // 测试  
 // var url = 'http://172.16.43.49:8765/web';  // stable地址  
-// var url = '/web';  // 线上发版时改为/web，走nginx代理转发
+var url = '/web';  // 线上发版时改为/web，走nginx代理转发
 var token, tel;
 var timer;
 var timer1 = null;

@@ -24,6 +24,7 @@ https://github.com/funnyque
         </p>
       </div>`,//文件上传说明
       showPreview: true,
+      isUploadChunk: false, // 是否为分片上传
       url: '',//上传文件地址
       fileName: 'file',//文件配置参数
       formParam: null,//文件以外的配置参数，格式：{key1:value1,key2:value2}
@@ -411,7 +412,11 @@ https://github.com/funnyque
           function controlUp() {
             if (postedNum < allowFiles.length) {
               upFiniehed = false;
-              upload();
+              if (option.isUploadChunk) {
+                pieceUpload()
+              } else {
+                upload();
+              }
             } else {
               upFiniehed = true;
             }
@@ -499,7 +504,276 @@ https://github.com/funnyque
               });
             }
           }
-          if (upFiniehed) upload(target);
+          function pieceUpload() {
+            if (allowNewPost) {
+              allowNewPost = false;
+              var file = selectedFiles[allowFiles[postedNum]];
+              postedNum++;
+              _this._resetParam();
+              _this._setUpStatus({ index: file.index, target: target }, 1);
+  
+              // 开始分片上传处理
+              _this._uploadByPieces(file.file, function (res) {
+                _this._showProgress(file.index, target);
+                uploadCompleted = true;
+                res.easyFileIndex = file.index;
+                if (option.multi) {
+                  var objRes = res;
+                  objRes.target = target;
+                  file.fileCount = res.resultObj.fileRows;
+                  option.successFunc && option.successFunc(objRes);
+                } else {
+                  option.successFunc && option.successFunc(res);
+                }
+
+                controlUp();
+                _this._setUpStatus({ index: file.index, target: target }, 2);
+              }, function (res) {
+                res.easyFileIndex = file.index;
+                var param = _this._findEle(file.index, target);
+                if (option.multi) {
+                  response.error.push(res);
+                  option.errorFunc && option.errorFunc(response);
+                } else {
+                  option.errorFunc && option.errorFunc(res);
+                }
+                uploadCompleted = true;
+                allowNewPost = true;
+                var tips = res.resultMsg ? res.resultMsg : '';
+                _this._handleFailed(param, tips);
+
+                controlUp();
+                _this._setUpStatus({ index: file.index, target: target }, 2);
+              })
+            }
+          }
+          if (upFiniehed) {
+            if (option.isUploadChunk) {
+              pieceUpload(target)
+            } else {
+              upload(target);
+            }
+          }
+        },
+        _uploadByPieces: function (file, successCb, errorCb) {
+          // 重写 FileReader 相关原型函数
+          FileReader.prototype.readAsBinaryString = function (fileData) {
+            var binary = ''
+            var pt = this
+            var reader = new FileReader()
+            reader.onload = function (e) {
+              var bytes = new Uint8Array(reader.result)
+              var length = bytes.byteLength
+              for (var i = 0; i < length; i++) {
+                binary += String.fromCharCode(bytes[i])
+              }
+              // pt.result  - readonly so assign binary
+              pt.content = binary
+              // 页面内data取pt.content文件内容
+              pt.onprogress(pt)
+            }
+            reader.readAsArrayBuffer(fileData)
+          }
+          
+          // 上传过程中用到的变量
+          var fileMD5 = '' // 总文件列表
+          var chunkSize = 0.25 * 1024 * 1024 // 5MB一片
+          var chunkCount = Math.ceil(file.size / chunkSize) // 总片数
+          var batchDealNum = 10 // promise并发请求数量
+          var sliceCount = 3 // 失败片数重新上传次数
+          var fileChunkList = []
+          var fileChunkLength = 0
+
+          // 获取md5
+          function readFileMD5() {
+            // if (file.size > 40 * 1024 * 1024) {
+            //   errorCb('上传文件不能超过40M，请重新上传')
+            //   return false
+            // }
+            // 读取文件的md5
+            var fileRederInstance = new FileReader()
+            fileRederInstance.readAsBinaryString(file)
+            fileRederInstance.onprogress = function (data) {
+              var fileBolb = data.content
+              fileMD5 = md5(fileBolb)
+              console.log('将分片上传')
+              createFileChunk()
+              batchUpload(0)
+            }
+          }
+
+          // 循环分解文件
+          function createFileChunk() {
+            var count = 0
+            var fileKey = file.name + '_' + +new Date()
+            while (count < file.size) {
+              fileChunkList.push({
+                key: fileKey,
+                chunk: file.slice(count, count + chunkSize),
+                index: fileChunkLength,
+                isLast: count + chunkSize > file.size
+              })
+              fileChunkLength++
+              count += chunkSize
+            }
+          }
+
+          // 分片上传，设置并发
+          function batchUpload(currIndex) {
+            var isLast = (currIndex + batchDealNum) >= chunkCount
+            var currChunks = fileChunkList.slice(currIndex, currIndex + batchDealNum)
+            var uploadTaskArr = currChunks.map(function (ele, index) {
+              return creatUploadTask(ele, currIndex + index)
+            })
+            Promise.all(uploadTaskArr)
+              .then(function (chunkInfo) {
+                var completed = Number(
+                  ((currIndex + batchDealNum) / chunkCount) * 100
+                ).toFixed(2)
+                // progress && progress(completed)
+                if (isLast) {
+                  if (currIndex + batchDealNum < chunkCount - 1) {
+                    console.log('分片上传成功' + (currIndex + batchDealNum))
+                  } else {
+                    // 当总数大于等于分片个数的时候
+                    if (currIndex + batchDealNum >= chunkCount - 1) {
+                      // progress && progress(100)
+                      uploadStatus()
+                    }
+                  }
+                } else {
+                  batchUpload(currIndex + batchDealNum)
+                }
+              })
+              .catch(function (err) {
+                console.log('分片上传失败：-----------------' + err)
+                errorCb(err)
+              })
+          }
+
+          function creatUploadTask(chunkInfo, index) {
+            return new Promise(function (resolve, reject) {
+              var params = new FormData()
+              params.append('file', chunkInfo.chunk);
+              params.append('fileRealName', file.name);
+              params.append('chunkNumber', index);
+              params.append('chunkSize', chunkSize);
+              params.append('totalChunks', chunkCount);
+              params.append('identifier', fileMD5);
+              params.append('token', option.formParam ? option.formParam.token : undefined);
+              params.append('mobile', option.formParam ? option.formParam.mobile : undefined);
+              $.ajax({
+                url: option.chunkUploadUrl,
+                type: "POST",
+                data: params,
+                async: false,
+                processData: false,
+                contentType: false,
+                timeout: option.timeout,
+                success: function (res) {
+                  if (res.resultCode != option.okCode) {
+                    rejectFn(chunkInfo, index, resolve, reject, 0)
+                  } else {  //成功
+                    resolve(chunkInfo)
+                  }
+                },
+                error: function (res) {
+                  rejectFn(chunkInfo, index, resolve, reject, 0)
+                }
+              });
+            })
+          }
+
+          // 分片上传某片失败时，重传该片3次
+          function rejectFn(
+            chunkInfo,
+            index,
+            parentResolve,
+            parentReject,
+            tryCount
+          ) {
+            tryCount++
+            new Promise(function (resolve, reject) {
+              var params = new FormData()
+              params.append(option.fileName, chunkInfo.chunk);
+              params.append('fileRealName', file.name);
+              params.append('chunkNumber', index);
+              params.append('chunkSize', chunkSize);
+              params.append('totalChunks', chunkCount);
+              params.append('identifier', fileMD5);
+              params.append('token', option.formParam ? option.formParam.token : undefined);
+              params.append('mobile', option.formParam ? option.formParam.mobile : undefined);
+              $.ajax({
+                url: option.chunkUploadUrl,
+                type: "POST",
+                data: params,
+                async: false,
+                processData: false,
+                contentType: false,
+                timeout: option.timeout,
+                success: function (res) {
+                  if (res.resultCode != option.okCode) {
+                    reject(res.resultMsg)
+                  } else {  //成功
+                    resolve('子分片重传成功')
+                  }
+                },
+                error: function (res) {
+                  reject(res)
+                }
+              });
+            })
+              .then(function () {
+                parentResolve(chunkInfo)
+              })
+              .catch(function (err) {
+                console.log('子error----当前片重传尝试第' + tryCount + '次')
+                if (tryCount == sliceCount) {
+                  parentReject(err)
+                } else {
+                  rejectFn(chunkInfo, index, parentResolve, parentReject, tryCount)
+                }
+              })
+          }
+
+          
+          function uploadStatus() { // 上传状态获取
+            var params = new FormData()
+            params.append('productCode', 0); // 空号
+            params.append('fileName', file.name);
+            params.append('chunks', chunkCount);
+            params.append('md5', fileMD5);
+            params.append('token', option.formParam ? option.formParam.token : undefined);
+            params.append('mobile', option.formParam ? option.formParam.mobile : undefined);
+            $.ajax({
+              url: option.uploadStatusUrl,
+              type: "POST",
+              data: params,
+              async: false,
+              processData: false,
+              contentType: false,
+              timeout: option.timeout,
+              success: function (res) {
+                let timer
+                if (res.resultCode == option.okCode) { // 成功
+                  clearTimeout(timer)
+                  successCb(res)
+                } else if (res.resultCode == option.uploadingCode) {  // 正在上传中
+                  timer = setTimeout(function () {
+                    uploadStatus()
+                  }, 3000)
+                } else { // 失败
+                  clearTimeout(timer)
+                  errorCb(res)
+                }
+              },
+              error: function (res) {
+                errorCb(res)
+              }
+            });
+          }
+
+          readFileMD5() // 开始执行代码
         },
         _setUpStatus: function (opt, type) {
           var param = this._findEle(opt.index, opt.target);
