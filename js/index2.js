@@ -149,6 +149,8 @@ $("#test-over-confirm").off('click').click(function () {
   $(".fileInput").val('').attr('data-count', 0);  // 上传清空
   $(".msjTask").hide();
   $(".msjPopup").hide()
+  uploadFileIdAll = []
+  fileCountsArrAll = []
 })
 
 function _handleChecked(param, status) {
@@ -179,7 +181,7 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
   }).done(function (res) {
     // console.log('res'+res);
     if (res.resultCode == '000000') {
-      $(".easy_upload_percent").hide()
+      $(param.upPeacent).hide()
       $(".easy_check_percent").show();  //检测的百分子显示
       // $(" #easyContainer .status7").show(); //检测中
       _handleChecked(param, '.status7');
@@ -194,20 +196,20 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
 
     } else if (res.resultObj.status == '5') {  //小于3001
       _handleChecked(param, '.status20');
-      $(".easy_upload_percent").hide()
+      $(param.upPeacent).hide()
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
       // $(".easy_check_percent").hide()
     } else if (res.resultObj.status == '6') {  //大于150万
       _handleChecked(param, '.status21');
-      $(".easy_upload_percent").hide()
+      $(param.upPeacent).hide()
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
     } else if (res.resultObj.status == '4') {  //余额不足
       _handleChecked(param, '.status9');
-      $(".easy_upload_percent").hide()
+      $(param.upPeacent).hide()
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
@@ -216,7 +218,7 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
       // _handleChecked(param, '.status80');
       $(param.statusDiv).find('.status').hide().end().find('.status80').html(res.resultMsg);
       $(param.statusDiv).find('.status').hide().end().find('.status80').show();
-      $(".easy_upload_percent").hide()
+      $(param.upPeacent).hide()
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
