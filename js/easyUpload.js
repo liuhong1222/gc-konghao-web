@@ -440,7 +440,7 @@ https://github.com/funnyque
                 url: option.url,
                 type: "POST",
                 data: fd,
-                async: false,
+                async: true,
                 processData: false,
                 contentType: false,
                 timeout: option.timeout,
@@ -513,8 +513,9 @@ https://github.com/funnyque
               _this._setUpStatus({ index: file.index, target: target }, 1);
   
               // 开始分片上传处理
+              _this._showPieceUploadProgress(file.index, target, false, false)
               _this._uploadByPieces(file.file, function (res) {
-                _this._showProgress(file.index, target);
+                _this._showPieceUploadProgress(file.index, target, true, true);
                 uploadCompleted = true;
                 res.easyFileIndex = file.index;
                 if (option.multi) {
@@ -529,6 +530,7 @@ https://github.com/funnyque
                 controlUp();
                 _this._setUpStatus({ index: file.index, target: target }, 2);
               }, function (res) {
+                _this._showPieceUploadProgress(file.index, target, true, false);
                 res.easyFileIndex = file.index;
                 var param = _this._findEle(file.index, target);
                 if (option.multi) {
@@ -539,12 +541,12 @@ https://github.com/funnyque
                 }
                 uploadCompleted = true;
                 allowNewPost = true;
-                var tips = res.resultMsg ? res.resultMsg : '';
+                var tips = res && res.resultMsg ? res.resultMsg : '';
                 _this._handleFailed(param, tips);
 
                 controlUp();
                 _this._setUpStatus({ index: file.index, target: target }, 2);
-              })
+              }, file.index, target)
             }
           }
           if (upFiniehed) {
@@ -555,7 +557,8 @@ https://github.com/funnyque
             }
           }
         },
-        _uploadByPieces: function (file, successCb, errorCb) {
+        _uploadByPieces: function (file, successCb, errorCb, fileIndex, target) {
+          var _this = this;
           // 重写 FileReader 相关原型函数
           FileReader.prototype.readAsBinaryString = function (fileData) {
             var binary = ''
@@ -627,21 +630,18 @@ https://github.com/funnyque
             })
             Promise.all(uploadTaskArr)
               .then(function (chunkInfo) {
-                var completed = Number(
-                  ((currIndex + batchDealNum) / chunkCount) * 100
-                ).toFixed(2)
-                // progress && progress(completed)
+                var completed = Math.floor(((currIndex + batchDealNum) / chunkCount) * 100)
                 if (isLast) {
                   if (currIndex + batchDealNum < chunkCount - 1) {
                     console.log('分片上传成功' + (currIndex + batchDealNum))
                   } else {
                     // 当总数大于等于分片个数的时候
                     if (currIndex + batchDealNum >= chunkCount - 1) {
-                      // progress && progress(100)
                       uploadStatus()
                     }
                   }
                 } else {
+                  _this._updateProgrePercent(fileIndex, target, completed)
                   batchUpload(currIndex + batchDealNum)
                 }
               })
@@ -666,7 +666,7 @@ https://github.com/funnyque
                 url: option.chunkUploadUrl,
                 type: "POST",
                 data: params,
-                async: false,
+                async: true,
                 processData: false,
                 contentType: false,
                 timeout: option.timeout,
@@ -707,7 +707,7 @@ https://github.com/funnyque
                 url: option.chunkUploadUrl,
                 type: "POST",
                 data: params,
-                async: false,
+                async: true,
                 processData: false,
                 contentType: false,
                 timeout: option.timeout,
@@ -749,7 +749,7 @@ https://github.com/funnyque
               url: option.uploadStatusUrl,
               type: "POST",
               data: params,
-              async: false,
+              async: true,
               processData: false,
               contentType: false,
               timeout: option.timeout,
@@ -832,6 +832,45 @@ https://github.com/funnyque
               if (postedNum < allowFiles.length) _this._uploadFile(target);
             }
           }, 1);
+        },
+        _showPieceUploadProgress: function (index, target, isComplete, isSuccess) {
+          var param = this._findEle(index, target);
+          var guang = param.guang; // 对应每条的进度箭头
+
+          // 进度条相关节点
+          var upBar = param.upBar;
+          var upPeacent = param.upPeacent;
+
+          if (isComplete) { // 完成
+            if (isSuccess) { // 成功
+              $(upPeacent).text('100%');
+              $(upBar).css("width", "100%");
+              upFiniehed = true;
+              allowNewPost = true;
+              if (postedNum < allowFiles.length) {
+                this._uploadFile(target);
+              }
+            }
+
+            $(upPeacent).hide();
+            $(guang).hide();
+          } else { // 初始化进度条
+            $(param.ele).find('.easy_upload_upbtn').hide(400);
+            $(param.statusDiv).find('.status').hide().end().find('.status3').show();
+
+            $(guang).show()
+            $(upPeacent).show();
+
+            $(upPeacent).text('0%');
+            $(upBar).css("width", "0%");
+          }
+        },
+        _updateProgrePercent: function (index, target, newPercent) {
+          var param = this._findEle(index, target);
+          var upBar = param.upBar;
+          var upPeacent = param.upPeacent;
+          $(upPeacent).text(newPercent + '%');
+          $(upBar).css("width", newPercent + "%");
         },
         _findEle: function (index, target) {
           var obj = {};

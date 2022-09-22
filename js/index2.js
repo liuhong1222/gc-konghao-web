@@ -49,11 +49,11 @@ $('#easyContainer').easyUpload({
     token: sessionStorage.getItem('token'),
     mobile: sessionStorage.getItem('id')
   },
-  timeout: 30000,
+  timeout: 180000,
   okCode: '000000',
   successFunc: function (res) {
     var param = _findEle(res.easyFileIndex, res.target);
-    if (res.resultCode = '000000') {
+    if (res.resultCode == '000000') {
 
       // 停顿8秒去调用检测接口
       // var secondTest = 5;  //需要的分钟
