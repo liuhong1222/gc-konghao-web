@@ -195,6 +195,9 @@ https://github.com/funnyque
               allowFiles = allowFiles.concat(arr);
               upFiniehed = true;
               _this._uploadFile(queueUl);
+              if (option.setFileCount) {
+                option.setFileCount(allowFiles.length)
+              }
             }
           })
 

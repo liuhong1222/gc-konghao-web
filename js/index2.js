@@ -8,6 +8,9 @@ var fileCounts = "";
 var fileCountsArr = [];
 var fileCountsArrAll = [];
 
+var selectedFileNum = 0; // 已选上传文件个数
+var dealedFileIndexs = [];
+
 isLogin(function () {
   loginHref();  //登录成功后，跳转对应的页面
   getBalance(function () {
@@ -51,6 +54,10 @@ $('#easyContainer').easyUpload({
   },
   timeout: 180000,
   okCode: '000000',
+  setFileCount: function(num) {
+    selectedFileNum = num
+    dealedFileIndexs = []
+  },
   successFunc: function (res) {
     var param = _findEle(res.easyFileIndex, res.target);
     if (res.resultCode == '000000') {
@@ -69,7 +76,7 @@ $('#easyContainer').easyUpload({
           uploadFileIdAll.push(uploadUrl)
           fileCountsArrAll.push(fileCounts)
           setCount();
-          runIng(param, uploadUrl, fileCounts);
+          runIng(param, uploadUrl, fileCounts, res.easyFileIndex);
         // }
       // }, 1000)
     }
@@ -79,6 +86,7 @@ $('#easyContainer').easyUpload({
     uploadFileIdAll.push(0)
     fileCountsArrAll.push(0)
     setCount();
+    judgeIsAllOver(res.easyFileIndex);
     
     if ($('.test-over').is(":hidden")) {
       handeldone();
@@ -158,7 +166,7 @@ function _handleChecked(param, status) {
   $(param.statusDiv).find('.status').hide().end().find(status).show();
 };
 
-function runIng(param, uploadUrl, fileCounts, dataindex) {
+function runIng(param, uploadUrl, fileCounts, easyFileIndex) {
   // console.log(param)
   // console.log(uploadUrl)
 
@@ -187,12 +195,12 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
       _handleChecked(param, '.status7');
       uploadFileId.push(uploadUrl);
       fileCountsArr.push(fileCounts)
-      // console.log(uploadFileId);
 
-      if (count == 0) {
-        checkProgress()
-      }
-      count++;
+      checkProgressOneByOne(uploadUrl, easyFileIndex)
+      // if (count == 0) {
+      //   checkProgress()
+      // }
+      // count++;
 
     } else if (res.resultObj.status == '5') {  //小于3001
       _handleChecked(param, '.status20');
@@ -201,12 +209,14 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
         handeldone();
       }
       // $(".easy_check_percent").hide()
+      judgeIsAllOver(easyFileIndex);
     } else if (res.resultObj.status == '6') {  //大于150万
       _handleChecked(param, '.status21');
       $(param.upPeacent).hide()
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
+      judgeIsAllOver(easyFileIndex);
     } else if (res.resultObj.status == '4') {  //余额不足
       _handleChecked(param, '.status9');
       $(param.upPeacent).hide()
@@ -214,6 +224,7 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
         handeldone();
       }
       // $(".easy_check_percent").hide()
+      judgeIsAllOver(easyFileIndex);
     } else {
       // _handleChecked(param, '.status80');
       $(param.statusDiv).find('.status').hide().end().find('.status80').html(res.resultMsg);
@@ -222,12 +233,84 @@ function runIng(param, uploadUrl, fileCounts, dataindex) {
       if ($('.test-over').is(":hidden")) {
         handeldone();
       }
+      judgeIsAllOver(easyFileIndex);
     }
   }).fail(function (err) {
+    judgeIsAllOver(easyFileIndex);
     toast('请求超时');
   })
 
 };
+
+function judgeIsAllOver(index) {
+  if (dealedFileIndexs.indexOf(index) == -1) {
+    dealedFileIndexs.push(index)
+  }
+  if (selectedFileNum == dealedFileIndexs.length) {
+    // 等页面数据显示完才跳转
+    setTimeout(() => {
+      window.location.href = './textRecord.html';
+    }, 500)
+  }
+}
+
+function checkProgressOneByOne(currFileId, easyFileIndex) {
+  $.ajax({
+    url: url + '/credit/getTestProcessMobile',
+    method: 'POST',
+    dataType: 'json',
+    async: false,
+    data: {
+      mobile: sessionStorage.getItem('id'),
+      token: sessionStorage.getItem('token'),
+      userId: userId,
+      fileCode: currFileId,
+    },
+  }).done(function (res) {
+    // 000000进行中，999978已终止 ，999977已暂停，999979已完成 ， 系统异常
+    if (res.resultCode == '000000') { //检测进行中 
+      for (var k = 0; k < $(".easy_upload_queue li").length; k++) {
+        if ($(".easy_upload_queue").children('li:eq(' + k + ')').data('fileid') == currFileId) {
+          $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.easy_check_percent').show()
+          var baifenbi = parseInt((res.resultObj.testCounts) / parseInt($(".easy_upload_queue").children('li:eq(' + k + ')').data('filecounts')) * 100) + '%'
+          $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.status16').hide()
+          $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.status7').show()
+          if (baifenbi == '100%') {
+            $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.status7').hide()
+            $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.status15').show()
+          }
+          $(".easy_upload_queue").children('li:eq(' + k + ')').children().children('.easy_check_percent').html(baifenbi)
+        }
+      };
+      setTimeout(() => {
+        checkProgressOneByOne(currFileId, easyFileIndex)
+      }, 1000)
+      // checkProgressOneByOne(currFileId, easyFileIndex)
+    } else if (res.resultCode == '999979') {  //检测完成
+      for (var a = 0; a < $(".easy_upload_queue li").length; a++) {
+        if ($(".easy_upload_queue").children('li:eq(' + a + ')').data('fileid') == currFileId) {
+          $(".easy_upload_queue").children('li:eq(' + a + ')').children().children('.easy_check_percent').hide()
+          $(".easy_upload_queue").children('li:eq(' + a + ')').children().children('.status7').hide()
+          $(".easy_upload_queue").children('li:eq(' + a + ')').children().children('.status15').hide()
+          $(".easy_upload_queue").children('li:eq(' + a + ')').children().children('.status8').show()
+        }
+      }
+      judgeIsAllOver(easyFileIndex)
+    } else { //检测异常
+      toast(res.resultMsg)
+      judgeIsAllOver(easyFileIndex)
+      if ($('.test-over').is(":hidden")) {
+        handeldone();
+      }
+    }
+  }).fail(function (err) {
+    toast(err.resultMsg)
+    judgeIsAllOver(easyFileIndex)
+    if ($('.test-over').is(":hidden")) {
+      handeldone();
+    }
+  })
+}
 
 
 function checkProgress() {
